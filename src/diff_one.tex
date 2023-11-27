@@ -1,0 +1,69 @@
+\section{Derivacije funkcije jedne realne varijable}
+
+Derivacija funkcije $f'(x_0)$ opisuje tok funkcije $f$ u točki $x_0$. Kada je
+pozitivna, vrijednost funkcije rase, kada je negativna, vrijednost funkcije pada.
+
+\begin{definitionbox}[derivacija funkcije]
+    Ako za funkciju $f:\langle a,b\rangle \to \mathbb{R}$ u točki $x_0\in\langle a,b\rangle$ postoji:
+
+    \begin{equation}
+        \label{eq:diff}
+        \tag{derivacija funkcije}
+        \lim_{x\to x_0} \frac{f(x) - f(x_0)}{x-x_0},
+    \end{equation}
+
+    tada taj limes označavamo s $f'(x_0)$, zovemo ga \textbf{derivacijom funkcije $f$ u točki $x_0$}
+    te kažemo da je $f$ \textbf{derivabilna u $x_0$}
+\end{definitionbox}
+
+Druge oznake:
+
+$$
+f'(x_0) = \frac{df}{dx}(x_0) = f(x_0)
+$$
+
+\begin{propositionbox}[veza derivabilnosti i neprekidnosti]
+    Ako je funkcija $f$ derivabilna u točki $x_0$, tada je $f$ neprekidna u točki $x_0$.
+\end{propositionbox}
+
+Kako bi funkcija $f$ bila neprekidna u točki $x_0$, ona mora:
+\begin{itemize}
+    \item biti definirana u točki $x_0$,
+    \item $\lim_{x\to x_0}f(x)$ mora postojati, i
+    \item $\lim_{x\to x_0}f(x) = f(x_0)$
+\end{itemize}
+
+Jer je funkcija $f(x)$ derivabilna u $x=x_0$, ona je \textbf{definirana u točki $x_0$} i znamo da je \fancyeq[formula][derivacije funkcije]{eq:diff} valjana:
+$$
+f'(x) = \lim_{x\to x_0} \frac{f(x) - f(x_0)}{x-x_0}.
+$$
+
+Ako pretpostavimo da $x\neq x_0$ možemo zapisati:
+$$
+f(x) - f(x_0) = \frac{f(x)-f(x_0)}{x-x_0}(x-x_0).
+$$
+
+Uporabom pravila o zbroju limesa iz toga možemo izvesti:
+
+\begin{align*}
+\lim_{x\to x_0}(f(x) - f(x_0)) =& \lim_{x\to x_0}\left[\frac{f(x)-f(x_0)}{x-x_0}(x-x_0)\right]\\
+=&\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\lim_{x\to x_0}(x-x_0).
+\end{align*}
+
+Primjećujemo da je prvi član jednak $f'(x_0)$ (prema \fancyeq[definiciji za][deriviranje]{eq:diff}), a drugi je jednak 0, tako da vrijedi:
+
+\begin{equation}
+    \label{eq:diff_zero_sized}
+    \lim_{x\to x_0}(f(x)-f(x_0)) = f'(x_0)\cdot0 = 0.
+\end{equation}
+
+Dodajemo nulu s desne strane $\lim_{x\to x_0}f(x)$ te ponovo primjenimo pravilo o zbroju limesa
+te uvrštavamo u \fancyeq[izraz]{eq:diff_zero_sized}, čime dobivamo:
+\begin{align*}
+\lim_{x\to x_0}f(x) =& \lim_{x\to x_0}[f(x)+\overbrace{f(x_0)-f(x_0)}^0]\\
+=& \lim_{x\to x_0}f(x_0) + \lim_{x\to x_0}[f(x)-f(x_0)]\\
+=& \lim_{x\to x_0}f(x_0) + 0,\\
+\lim_{x\to x_0}f(x) =& f(x_0).
+\end{align*}
+
+Time smo dokazali zadnja dva preduvijeta te i samu propoziciju.

@@ -1,0 +1,70 @@
+\section{Deriviranje implicitno zadanih funkcija}
+
+Implicitno zadanu funkciju $F(x,y) = 0$ se derivira tako da se izraze koji sadrže
+zavisnu varijablu $y=y(x)$ derivira koristeći pravilo za deriviranje kompozicije
+funkcija.
+
+\begin{examplebox}[deriviranje implicitno zadane funkcije]
+    Deriviraj implicitno zadane funkcije:
+
+    \begin{enumerate}
+        \item $xy-1=0$
+        \item $y^2-x=0$
+        \item $xe^y+y=0$
+        \item $y^2-xy+x\ln y = 1$
+    \end{enumerate}
+\end{examplebox}
+
+\section{Logritamsko deriviranje}
+
+Logaritamsko deriviranje se koristi za deriviranje funkcija oblika: $\displaystyle
+y=h(x)=f(x)^{g(x)}
+$
+
+U onim točkama u kojima derivacija postoji vrijedi:
+
+$$
+\left(f(x)^{g(x)}\right)' = f(x)^{g(x)}\left(g'(x)\ln(f(x))+g(x)\frac{f'(x)}{f(x)}\right).
+$$
+
+Postupak kojim se dolazi do derivacije sastoji se od tri koraka:
+\begin{itemize}
+    \item logaritmiranje obje strane,
+    \item deriviranje obje strane, pri čemu se $y$ derivira kao složena funkcija (kompozicija),
+    \item sređivanje dobivene jednakosti.
+\end{itemize}
+
+\begin{examplebox}[logaritamsko deriviranje]
+    Deriviraj funkcije:
+
+    \begin{enumerate}
+        \item $y=x^{x^2}$
+        \item $y=(\ln x)^{\sin x}$
+    \end{enumerate}
+\end{examplebox}
+
+\section{Deriviranje parametarski zadane funkcije}
+
+Kada je funkcija $y=y(x)$ parametarski zadana sa: $\displaystyle
+\begin{cases}
+    x = x(t)\\
+    y = y(t)
+\end{cases},
+$ tada je:
+
+\begin{align*}
+y'&=\frac{\dot{y}}{\dot{x}},\\
+y''&=\frac{\dot{y'}}{\dot{x}},\\
+\vdots&\\
+y^{(n)}&=\frac{\dot{y^{(n-1)}}}{\dot{x}}.
+\end{align*}
+
+\begin{examplebox}[parametarski zadane funkcije]
+    Odredi $y'$ i $y''$ za sljedeće funkcije:
+
+    \begin{enumerate}
+        \item $x=t,\quad y=1-t,\quad t\in\mathbb{R}$
+        \item $x=t,\quad y=t^2,\quad t\in\mathbb{R}$
+        \item $x=3\cos t,\quad y=\sin t,\quad t\in[0, 2\pi]$
+    \end{enumerate}
+\end{examplebox}
