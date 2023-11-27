@@ -1,0 +1,88 @@
+\section{Derivacije višeg reda}
+
+\begin{definitionbox}[derivacija funkcije višeg reda]
+    \textbf{Druga derivacija funkcije $f$} je derivacija funkcije $f'$:
+
+    \begin{equation*}
+        f'' = (f')'.
+    \end{equation*}
+
+    \textbf{$n$-ta derivacija funkcije $f$} je derivacija funkcije $f^{(n-1)}$:
+
+    \begin{equation*}
+        f^{(n)} = \left(f^{(n-1)}\right)'.
+    \end{equation*}
+\end{definitionbox}
+
+Derivacije višeg reda se zapisuju sa redom derivacije u zagradama, nekad i rimskim
+brojevima zbog jasnoće:
+
+$$
+f'''''(x) = f^{(5)}(x) = f^{(V)}(x)
+$$
+
+\section{Diferencijal funkcije}
+
+\begin{definitionbox}[diferencijal funkcije]
+    Izraz $f'(x)\cdot\Delta x$ se zove \textbf{diferencijal funkcije $f$} u točki
+    $x$ i označava se sa $dy$ (ili $df(x)$) sukladno oznaci $y=f(x)$ za funkciju $f$.
+
+    \begin{equation*}
+        dy = f'(x)\cdot dx
+    \end{equation*}
+\end{definitionbox}
+
+\begin{center}
+% potrebno dodati '\usetikzlibrary{decorations.pathreplacing}' u preamble
+% za dx i dy. Ili maknuti decoration i staviti latex-latex za obične/ružne
+% strijelice.
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$y$},
+        xmin=0, xmax=5,
+        ymin=0, ymax=25,
+        xtick={2,3},
+        ytick={10, 20},
+        xticklabels={$x$,$x+\Delta x$},
+        yticklabels={$f(x)$,$f(x+\Delta x)$},
+        domain=0:4,
+        samples=100,
+        smooth,
+        width=30em,
+    ]
+  
+    \addplot [thick, domain=1:4] {2 + 2*x^2};
+    \addplot [thin, dashed] {8*x-6};
+
+    \pgfmathsetmacro{\xval}{2}
+    \pgfmathsetmacro{\xpval}{3}
+    \pgfmathsetmacro{\tangent}{8*\xval - 6}
+    \pgfmathsetmacro{\ptangent}{8*\xpval - 6}
+    \pgfmathsetmacro{\preal}{2+ 2*\xpval*\xpval}
+
+    % triangle
+    \fill [yellow] (\xval,\tangent) coordinate (a) --
+          (\xpval,\tangent) coordinate (c) --
+          (\xpval,\ptangent) coordinate (b) -- cycle;
+    \node [yshift=0.5em, xshift=1.2em] at (\xval, \tangent) {$\varphi$};
+          
+    % T
+    \addplot [mark=*] coordinates {(\xval,\tangent)} node[above left] {\sffamily T};
+
+    % lines
+    \addplot [cGreen, thick, dotted] coordinates {(\xval,0) (\xval,\tangent)};
+    \addplot [cGreen, thick, dotted] coordinates {(0,\tangent) (\xval,\tangent)};
+    \addplot [cBlue, thick, dotted] coordinates {(\xpval,0) (\xpval,\preal)};
+    \addplot [cBlue, thick, dotted] coordinates {(0,\preal) (\xpval,\preal)};
+
+    % dx & dy labels
+    \draw [decorate, decoration={brace, amplitude=5pt, mirror}, yshift=-2pt] (\xval,\tangent) -- (\xpval,\tangent) node[midway, below=5pt] {$dx$};
+    \draw [decorate, decoration={brace, amplitude=5pt, mirror}, xshift=2pt] (\xpval,\tangent) -- (\xpval,\ptangent) node[midway, right=5pt] {$dy$};
+
+    \draw [thick, latex-latex, xshift=32pt] (\xpval,\tangent) -- (\xpval,\preal) node[midway, right=2pt] {$\Delta f(x)$};
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}

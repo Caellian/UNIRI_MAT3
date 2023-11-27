@@ -1,0 +1,75 @@
+\section{L'Hospitalovo pravilo}
+
+L'Hospitalovo pravilo služi za izračunavanje limesa neodređenih oblika $\frac{0}{0}$
+i $\frac{\infty}{\infty}$.
+
+\begin{definitionbox}[L'Hospitalovo pravilo]
+    Neka su zadane funkcije $f$ i $g$ neprekidne na $[a,b]$ za koje vrijedi:
+    \begin{gather*}
+        \lim_{x\to c}f(x) = \lim_{x\to c}g(x) = 0\\
+        \text{ili}\\
+        \lim_{x\to c}f(x) = \pm\infty\quad\text{i}\quad\lim_{x\to c}g(x)=\pm\infty
+    \end{gather*}
+
+    Pretpostavimo da postoje $f'$ i $g'$ na $\langle a,b\rangle$ osim možda u točki $c\in\langle a,b\rangle$,
+    te da je $g'(x)\neq 0$ u okolini točke $c$. Ako postoji $\lim_{x\to c}\frac{f'(x)}{g'(x)}$ tada vrijedi:
+
+    \center
+    \begin{equation}
+        \label{eq:lhospital}
+        \tag{l'hospitalovo pravilo}
+        \phantom{\text{(l'hospitalovo pravilo)}} % dunno why here and now...
+        \lim_{x\to c}\frac{f(x)}{g(x)} = \lim_{x\to c}\frac{f'(x)}{g'(x)}
+    \end{equation}
+\end{definitionbox}
+
+Pravilo je moguče primjeniti uzastopno ako su zadovoljeni uvjeti teorema za
+derivacije funkcija $f$ i $g$.
+
+\subsection{Neodređeni oblici}
+
+Kod računanja limesa mogu se pojaviti i neodređeni oblici $0\cdot\infty$, $\infty - \infty$,
+$0^0$, $1^\infty$ i $\infty^0$ koji se primjenom odgovarajućih transformacija svode na
+jedan od dva oblika koji se mogu riješiti uz pomoć l'hospitalovog pravila.
+
+\begin{center}
+\begin{tblr}{
+    colspec = {X[0.6,c,m]X[1.6,c,m]X[3,c,m]X[3,c,m]},
+    stretch = 0,
+    rowsep = 6pt,
+    hlines = {colordefinitionfg, 0.5pt},
+    vlines = {colordefinitionfg, 0.5pt},
+    }
+    \SetRow{bg=colordefinitionbg,font=\sffamily\bfseries}
+    Oblik&Uvjeti&Transformacija u $\displaystyle\frac{0}{0}$
+    &Transformacija u $\displaystyle\frac{\infty}{\infty}$\\
+    $\frac{0}{0}$
+    &{$\lim_{x \to c} f(x) = 0$,\\$\lim_{x \to c} g(x) = 0$}
+    &-
+    &$\displaystyle\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{\frac{1}{g(x)}}{\frac{1}{f(x)}}$\\
+    $\frac{\infty}{\infty}$
+    &{$\lim_{x \to c} f(x) = \infty$,\\$\lim_{x \to c} g(x) = \infty$}
+    &$\displaystyle\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{\frac{1}{g(x)}}{\frac{1}{f(x)}}$
+    &-\\
+    $0\cdot\infty$
+    &{$\lim_{x \to c} f(x) = 0$,\\$\lim_{x \to c} g(x) = \infty$}
+    &$\displaystyle\lim_{x \to c} f(x)g(x) = \lim_{x \to c} \frac{f(x)}{\frac{1}{g(x)}}$
+    &$\displaystyle\lim_{x \to c} f(x)g(x) = \lim_{x \to c} \frac{g(x)}{\frac{1}{f(x)}}$\\
+    $\infty - \infty$
+    &{$\lim_{x \to c} f(x) = \infty$,\\$\lim_{x \to c} g(x) = \infty$}
+    &$\displaystyle\lim_{x \to c} (f(x) - g(x)) = \lim_{x \to c} \frac{\frac{1}{g(x)} - \frac{1}{f(x)}}{\frac{1}{fg(x)}}$
+    &$\displaystyle\lim_{x \to c} (f(x) - g(x)) = \ln \lim_{x \to c} \frac{e^{f(x)}}{e^{g(x)}}$\\
+    $0^0$
+    &{$\lim_{x \to c} f(x) = 0^+$,\\$\lim_{x \to c} g(x) = 0$}
+    &$\displaystyle\lim_{x \to c} f(x)^{g(x)} = \exp \lim_{x \to c} \frac{g(x)}{\frac{1}{\ln f(x)}}$
+    &$\displaystyle\lim_{x \to c} f(x)^{g(x)} = \exp \lim_{x \to c} \frac{\ln f(x)}{\frac{1}{g(x)}}$\\
+    $1^\infty$
+    &{$\lim_{x \to c} f(x) = 1$,\\$\lim_{x \to c} g(x) = \infty$}
+    &$\displaystyle\lim_{x \to c} f(x)^{g(x)} = \exp \lim_{x \to c} \frac{\ln f(x)}{\frac{1}{g(x)}}$
+    &$\displaystyle\lim_{x \to c} f(x)^{g(x)} = \exp \lim_{x \to c} \frac{g(x)}{\frac{1}{\ln f(x)}}$\\
+    $\infty^0$
+    &{$\lim_{x \to c} f(x) = \infty$,\\$\lim_{x \to c} g(x) = 0$}
+    &$\displaystyle\lim_{x \to c} f(x)^{g(x)} = \exp \lim_{x \to c} \frac{g(x)}{\frac{1}{\ln f(x)}}$
+    &$\displaystyle\lim_{x \to c} f(x)^{g(x)} = \exp \lim_{x \to c} \frac{\ln f(x)}{\frac{1}{g(x)}}$\\
+\end{tblr}
+\end{center}

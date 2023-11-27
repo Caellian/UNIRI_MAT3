@@ -1,0 +1,159 @@
+\section{Pravila deriviranja}
+
+\begin{multicols}{2}
+
+\begin{propositionbox}[pravilo o zbroju funkcija]
+    Derivacija zbroja je jednaka zbroju derivacija:
+
+    $$
+        (f(x)+g(x))' = f'(x) + g'(x)
+    $$
+\end{propositionbox}
+
+Raspisujemo zbroj funkcija kroz \fancyeq[definiciju za][derivaciju funkcije]{eq:diff},
+uređujemo nazivnik i primjenjujemo pravilo o zbroju limesa:
+
+\begin{align*}
+    &(f(x)+g(x))'=\\
+    &=\lim_{h\to 0}\frac{f(x+h)+g(x+h)-(f(x)+g(x))}{h}\\
+    &=\lim_{h\to 0}\frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}\\
+    &=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} + \lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
+    &=f'(x) + g'(x)
+\end{align*}
+
+\begin{propositionbox}[pravilo o razlici funkcija]
+    Derivacija razlike je jednaka razlici derivacija:
+
+    $$
+        (f(x)-g(x))' = f'(x) - g'(x)
+    $$
+\end{propositionbox}
+
+Dokaz je identičan pravilu o derivaciji zbroja funkcija:
+
+\begin{align*}
+    &(f(x)-g(x))'=\\
+    &=\lim_{h\to 0}\frac{f(x+h)-g(x+h)-(f(x)+g(x))}{h}\\
+    &=\lim_{h\to 0}\frac{f(x+h)-f(x)-(g(x+h)-g(x))}{h}\\
+    &=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} - \lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
+    &=f'(x) - g'(x)
+\end{align*}
+
+\newcolumn
+
+\begin{propositionbox}[pravilo o deriviranju konstante]
+    Derivacija konstante $c$ je jednaka nuli:
+
+    $$
+        \frac{d}{dx}(c) = 0
+    $$
+\end{propositionbox}
+
+Zamjenimo konstantu $c$ sa funkcijom $f$ koja za svaki $x$ vraća vrijednost $c$, $f(x)=c$.
+Iz toga slijedi:
+
+\begin{align*}
+    f'(x) =& \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
+          =& \lim_{h\to 0}\frac{c - c}{h} = \lim_{h\to 0}0 = 0
+\end{align*}
+
+\begin{propositionbox}[pravilo o deriviranju umnoška funkcije s konstantom]
+    Derivacija umnoška konstante i funkcije je jednaka umnošku te konstante i derivacije funkcije:
+    $$
+        (cf(x))' = cf'(x)
+    $$
+\end{propositionbox}
+
+\begin{align*}
+    (cf(x))'=&\lim_{h\to 0}\frac{cf(x+h)-cf(x)}{h}\\
+            =&c\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
+            =&cf'(x)
+\end{align*}
+
+\end{multicols}
+
+\begin{propositionbox}[pravilo o deriviranju umnoška funkcija]
+    $$
+        (fg)'(x) = (f(x)\cdot g(x))' = f'(x)g(x) + f(x)g'(x)
+    $$
+\end{propositionbox}
+
+\begin{align*}
+    (fg)'(x)=&\lim_{h\to 0}\frac{cf(x+h)-cf(x)}{h}\\
+    =&c\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
+    =&cf'(x)
+\end{align*}
+
+\begin{propositionbox}[pravilo o deriviranju kvocijenta funkcija]
+    $$
+        \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju inverzne funkcije]
+    $$
+        (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju kompozicije funkcija]
+    $$
+        (f\circ g)'(x) = (f(g(x)))' = f'(g(x)) \cdot g'(x)
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju eksponenta prirodnog broja]
+    $$
+        (e^x)' = e^x \cdot x'
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju funkcije s potencijom]
+    $$
+        (x^{n})' = nx^{n-1}
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju logaritamske funkcije]
+    $$
+        (\ln(u))' = \frac{u'}{u}
+    $$
+\end{propositionbox}
+
+\subsection{Pravila deriviranja trigonometrijskih funkcija}
+
+\begin{propositionbox}[pravilo o deriviranju sinusa]
+    $$
+        (\sin(x))' = \cos(x)
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju kosinusa]
+    $$
+        (\cos(x))' = -\sin(x)
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju tangensa]
+    $$
+        (\tan(x))' = \sec^2(x)
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju kotangense]
+    $$
+        (\cot(x))' = -\csc^2(x)
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju sekansa]
+    $$
+        (\sec(x))' = \sec(x) \tan(x)
+    $$
+\end{propositionbox}
+
+\begin{propositionbox}[pravilo o deriviranju kosekansa]
+    $$
+        (\csc(x))' = -\csc(x) \cot(x)
+    $$
+\end{propositionbox}
