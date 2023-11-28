@@ -1,0 +1,166 @@
+\section{Tok funkcije}
+
+\subsection{Domena}
+
+Funkcija $f(x)$ je definirana za sve realne brojeve $x\in\mathbb{R}$, osim ako
+njena vrijednost nije definirana za neki $x$. Vrijednost funkcije za $f(x)$ je
+definirana ako spada u očekivanu kodomenu ($\mathcal{C}$) funkcije.
+
+To se provjerava ovisno o uvjetima izraza korištenih u funkciji, no učestali
+uzroci su:
+\begin{itemize}
+    \item vrijednosti $x$ za koje nazivnik razlomka u funkciji poprima vrijednost $0$,
+    \item pojavljivanje korijena negativnog broja (ako kodomena ne uključuje imaginarne brojeve),
+    \item negativan argument logaritma ili argument jednak nuli,
+    \item $\dots$
+\end{itemize}
+
+\noindent
+Domena funkcije je skup svih realnih brojeva $\mathbb{R}$ osim vrijednosti $x$
+koje uvrštene u funkciju $f$ daju nevaljale/neodređene rezultate.
+
+\subsection{Nultočke}
+
+Nultočke funkcije $f$ su vrijednosti $x$ za koje funkcija poprima vrijednost $0$.
+U grafičkom prikazu to znači da prelazi na tim točkama preko x-osi.
+
+Za određivanje nultočaka, rješavamo jednadžbu:
+$$
+f(x) = 0
+$$
+
+\subsection{Intervali monotonosti}
+
+Interval monotonosti funkcije je interval na kojem funkcija kontinuirano raste
+ili pada.
+
+\begin{theorembox}
+    Neka je funkcija $f$ derivabilna na $\langle a,b \rangle \subseteq \mathcal{D}_f$.
+    Tada vrijedi:
+    \begin{itemize}
+        \item $f$ raste na $\langle a,b \rangle \Leftrightarrow f'(x) \geq 0, \forall x \in \langle a,b \rangle$,
+        \item $f$ pada na $\langle a,b \rangle \Leftrightarrow f'(x) \leq 0, \forall x \in \langle a,b \rangle$.
+    \end{itemize}
+\end{theorembox}
+
+Točke $c$ za koje vrijedi $f'(c)=0$ zovemo \textbf{stacionarnim točkama}
+funkcije $f$.
+
+Točku $c\in \mathcal{D}_f$ nazivamo \textbf{kritičnom točkom} funkcije $f$ ako
+je $c$ stacionarna točka od $f$ ili ako $f$ nije derivabilna u točki $c$.
+
+\subsection{Lokalni ekstremi}
+
+\begin{definitionbox}
+    Točka $(c, f(c))$ je \textbf{lokalni minimum} funkcije $f$ ako postoji
+    interval $\langle a,b \rangle$ koji sadrži točku $c$ takav da
+    $f(c)<f(x),\forall x \in \langle a,b \rangle, x\neq c$.
+    Točka $(c, f(c))$ je \textbf{lokalni maksimum} funkcije $f$ ako postoji
+    interval $\langle a,b \rangle$ koji sadrži točku $c$ takav da
+    $f(c)>f(x),\forall x \in \langle a,b \rangle, x\neq c$.
+\end{definitionbox}
+
+U točki ekstrema $(c, f(c))$, tangenta na graf funkcije (ako postoji) je
+paralelna x-osi, odnosno njen koeficijent smjera $f'(c) = 0$.
+
+Funkcija $f$ ima lokalni ekstrem u kritičnoj točki $c$ ako i samo ako se
+predznak funkcije $f'$ na području lijevo od $c$ razlikuje od predznaka funkcije
+$f'$ na području desno od $c$.
+
+\begin{theorembox}
+    Neka funkcija $f$ u nekoj okolini točke $c$ ima neprekidne derivacije od
+    reda $n, n\in\mathbb{N},n\geq 2$.
+    Neka vrijedi
+    $$
+    f'(c)=f''(c)=\cdots=f^{(n-1)}(c)=0,\qquad f^{(n)}(c)\neq 0.
+    $$
+
+    \begin{itemize}
+        \item Ako je $n$ paran broj, funkcija $f$ ima lokalni ekstrem u točki $c$, i to:
+        \begin{itemize}
+            \item lokalni minimum ako je $f^{(n)}(c)<0$, a
+            \item lokalni maksimum ako je $f^{(n)}(c)>0$.
+        \end{itemize}
+        \item Ako je $n$ neparan broj, funkcija $f$ \textit{nema} lokalni
+        ekstrem u $c$.
+    \end{itemize}
+\end{theorembox}
+
+\subsection{Konveksnost i konkavnost}
+
+Funkcija $f$ je \textbf{konveksna} na intervalu $\langle a,b \rangle\subseteq\mathcal{D}_f$
+ako vrijedi:
+
+$$
+f\left(\frac{x_1+x_2}{2}\right) \leq \frac{f(x_1)+f(x_2)}{2},\qquad\forall x_1,x_2 \in \langle a,b \rangle,\qquad x_1\neq x_2
+$$
+
+Ako je navedena nejednakost stroga, funkcija je \textbf{strogo konveksna}.
+
+
+Funkcija $f$ je \textbf{konkavna} na intervalu $\langle a,b \rangle\subseteq\mathcal{D}_f$
+ako vrijedi:
+
+$$
+f\left(\frac{x_1+x_2}{2}\right) \geq \frac{f(x_1)+f(x_2)}{2},\qquad\forall x_1,x_2 \in \langle a,b \rangle,\qquad x_1\neq x_2
+$$
+
+Ako je navedena nejednakost stroga, funkcija je \textbf{strogo konkavna}.
+
+\begin{theorembox}
+    Neka funkcija $f$ ima drugu derivaciju na $\langle a,b \rangle\subseteq\mathcal{D}_f$.
+    Tada vrijedi:
+    \begin{itemize}
+        \item $f$ je strogo konveksna na $\langle a,b \rangle \Leftrightarrow f''(x)>0,\forall x \in \langle a,b \rangle$,
+        \item $f$ je strogo konkavna na $\langle a,b \rangle \Leftrightarrow f''(x)<0,\forall x \in \langle a,b \rangle$.
+    \end{itemize}
+\end{theorembox}
+
+Točku $c\in\mathcal{D}_f$ u kojoj se mijenja predznak funkcije $f''$ nazivamo
+\textbf{točkom infleksije} funkcije $f$. Za točku infleksije vrijedi $f''(c) = 0$.
+
+\begin{theorembox}
+    Neka funkcija $f$ u nekoj okolini točke $c$ ima neprekidne derivacije od
+    reda $n$, gdje je $n\in\mathbb{N}, n\geq 3$.
+    Neka vrijedi:
+    $$
+    f''(c)=f'''(c)=\cdots=f^{(n-1)}(c)=0,\qquad f^{(n)}(c) \neq 0.
+    $$
+
+    \begin{itemize}
+        \item Ako je $n$ neparan broj, $c$ \textbf{je} točka infleksije funkcije $f$.
+        \item Ako je $n$ paran broj, $c$ \textbf{nije} točka infleksije funkcije $f$.
+    \end{itemize}
+\end{theorembox}
+
+\subsection{Asimptote}
+
+Ako je
+$$
+\lim_{x\to c\pm}f(x)=\pm\infty,
+$$
+kažemo da je pravac $x=c$ \textbf{vertikalna asimptota} funkcije $f$.
+
+Ako je
+$$
+\lim_{x\to\pm\infty}\frac{f(x)}{x}=k,\qquad \lim_{x\to\pm\infty}(f(x)-kx)=l,
+$$
+kažemo da je pravac $y=kx+l$ \textbf{kosa asimptota} funkcije $f$.
+
+Za određivanje \textbf{horizontalne asimptote} uspoređujemo stupnjeve polinoma
+funkcije koja je izražena kao razlomak:
+$$
+f(x)=\frac{ax^n+\dots}{bx^m+\dots}
+$$
+\begin{itemize}
+    \item Ako je $n<m$ onda je horizontalna asimptota x-os ($y=0$).
+    \item Ako je $n=m$ onda je horizontalna asimptota $\displaystyle y=\frac{a}{b}$.
+    \item Ako je $n>m$ onda horizontalna asimptota ne postoji.
+\end{itemize}
+
+U slučaju gdje funkcija nije razlomak, pretpostavljamo da je nazivnik $1$, te
+prema navedenim pravilima horizontalna asimptota ne postoji.
+
+\subsection{Primjer određivanja toka funkcije}
+
+
