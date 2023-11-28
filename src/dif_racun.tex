@@ -5,10 +5,65 @@
 \begin{theorembox}[fermatov teorem]
     Neka funkcija $f$ definirana na intervalu $\langle a,b \rangle$ poprima u
     točki $c\in\langle a,b \rangle$ najveću ili najmanju vrijednost. Ako je $f$
-    derivabilna u točki $c$, tada je $f'(x)=0$.
+    derivabilna u točki $c$, tada je $f'(c)=0$.
 \end{theorembox}
 
 % TODO: Graf sa tangentom u maksimumu
+
+Pretpostavimo da $f$ ima lokalni maksimum u $x=c$. Tj. $f(c)\geq f(x)$ za svaki
+$x$ koji se nalazi blizu $c$.
+Uvodimo vrijednost $\pm h$ koja je blizu $0$, za koju
+vrijedi $x = c+h$.
+
+Dobivamo izraz oblika:
+$$
+f(c)\geq f(c+h)
+$$
+
+Primjećujemo da je taj izraz sastavljen od dva izraza koji se nalaze u
+\fancyeq[definiciji za][derivaciju funkcije]{eq:diff}.
+Svodimo ga na najednakost s definicijom te pokušavamo svesti $h$ na $0$ kako bi
+dobili $c+0=x$:
+
+$$
+0 \geq f(c+h) - f(c)\quad /\div h
+$$
+
+\begin{multicols}{2}
+\begin{equation}
+\label{eq:fermat_h_gt_zero}
+0\geq\frac{f(c+h)-f(c)}{h}\tag{$h>0$}
+\end{equation}
+
+\noindent
+Za \fancyeq[slučaj]{eq:fermat_h_gt_zero} možemo vidjeti da sljedeći limes ne može
+biti pozitivan jer nije definiran:
+$$
+    0\geq \lim_{h\to 0^+}\frac{f(c+h)-f(c)}{h}
+$$
+
+\newcolumn
+
+\begin{equation}
+\label{eq:fermat_h_lt_zero}
+0\leq\frac{f(c+h)-f(c)}{h}\tag{$h<0$}
+\end{equation}
+
+\noindent
+Za \fancyeq[slučaj]{eq:fermat_h_lt_zero} možemo vidjeti da sljedeći limes ne može
+biti negativan jer nije definiran:
+$$
+    0\leq \lim_{h\to 0^-}\frac{f(c+h)-f(c)}{h}
+$$
+
+\end{multicols}
+
+Kako bi funkcija $f$ bila derivabilna za $x=c$, oba limesa moraju postojati i
+imati jednaku vrijednost za $f'(c)$.
+
+Stoga vrijedi $f'(c)\geq 0 \land f'(c)\leq 0 \implies f'(c)=0$.
+
+Dokaz za minimum je sličan.
 
 \begin{theorembox}[rolleov teorem]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$ i derivabilna na $\langle a,b \rangle$.
@@ -16,11 +71,80 @@
     u kojoj je $f'(c)=0$.
 \end{theorembox}
 
-\begin{theorembox}[teorem o ekstremnim vrijednostima]
+Recimo da je $k=f(a)=f(b)$.
+
+\noindent
+Razmatramo sljedeća tri slučaja:
+\begin{enumerate}
+    \item $f(x) = k, \forall x\in \langle a,b \rangle$.
+    \item $\exists x\in \langle a,b \rangle$ takav da $f(x) > k$.
+    \item $\exists x\in \langle a,b \rangle$ takav da $f(x) < k$.
+\end{enumerate}
+
+\noindent
+\textbf{Slučaj 1:} $f(x) = k, \forall x\in \langle a,b \rangle \implies f'(x) = 0, \forall x\in \langle a,b \rangle$.
+
+\bigskip
+\noindent
+\textbf{Slučaj 2:} Jer je funkcija $f$ neprekidna na zatvorenom intervalu $[a,b]$
+i ograničena njime, zbog teorema o ekstremima, ta funkcija ima absolutni maksimum.
+
+Također, jer postoji točka $x\in \langle a,b \rangle$ za koju vrijedi $f(x)>k$,
+taj absolutni maksimum je veći od $k$.
+Dakle, absolutni maksimum nije ni jedna granična vrijednost.
+
+Posljedično tome, absolutni maksimum se mora pojaviti na unutarnjoj vrijednosti
+$c\in\langle a,b \rangle$.
+
+Jer funkcija $f$ ima maksimum na unutarnjoj točki $c$, i $f$ je derivabilna za
+$c$, vrijedi $f'(c)=0$.
+
+\bigskip
+\noindent
+\textbf{Slučaj 3} je analogan slučaju 2, samo je maksimum zamjenjen minimumom.
+
+\newpage
+\begin{theorembox}[teorem o ekstremima]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$. Tada funkcija $f$ na segmentu
     $[a,b]$ postiže minimalnu i maksimalnu vrijednost.
 \end{theorembox}
 
+Jer je funkcija $f$ neprekidna na segmentu $[a,b]$, mora biti ograničena na tom
+segmentu prema teoremu o ograničenosti.
+
+\textbf{Pretpostavka:} $\mathbf{M}$ je najmanja gornja međa funkcije $f$.
+
+Ako postoji $c\in[a,b]$ gdje je $f(c)=M$, nema potrebe za daljnim dokazom jer
+funkcija $f$ poprima svoj maksimum na intervalu $[a,b]$.
+
+Ako ne postoji takav $c$, onda vrijedi $f(x)<M, \forall x\in [a,b]$.
+
+\textbf{Definiramo:}
+$$
+g(x) = \frac{1}{M-f(x)}
+$$
+
+Funkcija $g(x)>0,\forall x \in [a,b]$ i neprekidna na $[a,b]$, te je samim time
+i ograničena na tom intervalu.
+
+S obzirom da je $g$ ograničena na $[a,b]$, mora postojati neki $K>0$ za kojeg
+vrijedi $g(x)\leq K, \forall x [a,b]$.
+
+Slijedno tome,
+\begin{align*}
+\frac{1}{M-f(x)}\leq& K&/\times(M-f(x))\\
+1\leq& KM-Kf(x)\\
+Kf(x)\leq& KM - 1&/\div K\\
+f(x)\leq& M - \frac{1}{K}.\\
+\end{align*}
+
+No to nije moguće jer kontradiktira pretpostavci da je $M$ najmanja gornja međa.
+Što ostavlja jedino mogučnost da postoji $c\in[a,b]$ gdje je $f(c)=M$.
+Drugim riječima, $f$ postiže svoj maksimum na intervalu $[a,b]$.
+
+Dokaz za minimum je sličan maksimumu.
+
+\newpage
 \begin{theorembox}[lagrangeov teorem srednje vrijednosti]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$ i derivabilna na $\langle a,b \rangle$.
     Tada postoji barem jedna točka $c\in\langle a,b \rangle$ u kojoj je
@@ -28,6 +152,88 @@
         f'(c) = \frac{f(b)-f(a)}{b-a}
     $$
 \end{theorembox}
+
+\begin{multicols}{2}
+
+\noindent
+$F$ i $G$ su primitivne funkcije od $f$:
+$$
+\implies \begin{cases}
+    F'(x) = f(x),\qquad \forall x\in\langle a,b \rangle\\
+    G'(x) = f(x),\qquad \forall x\in\langle a,b \rangle
+\end{cases}
+$$
+
+\noindent
+\textbf{Tvrdnja:}
+\begin{align*}
+\exists c\in\mathbb{R}\text{ takav da }F(x) = G(x) +& c,\qquad\forall x\in \langle a,b \rangle\\
+\Updownarrow\qquad&\\
+F(x) - G(x) =& c,\qquad\forall x\in \langle a,b \rangle\\
+(F-G)(x) =& c,\qquad\forall x\in \langle a,b \rangle
+\end{align*}
+
+\noindent
+\textbf{Stavimo:} $H\coloneq F - G \implies H(x)=c,\space\forall x\in \langle a,b \rangle$
+
+\noindent
+\textbf{Vrijedi:}
+
+$$
+\begin{rcases}
+    F'(x) = f(x),\qquad\forall x\in \langle a,b \rangle\\
+    G'(x) = f(x),\qquad\forall x\in \langle a,b \rangle
+\end{rcases} -
+$$
+\begin{align*}
+    F'(x)-G'(x)&=f(x)-f(x)\\
+    (F-G)'(x)&=0,\qquad\forall x\in \langle a,b \rangle\\
+    \label{eq:h_is_zero}
+    H'(x)&=0,\qquad\forall x\in \langle a,b \rangle\tag{A}
+\end{align*}
+
+$$
+H'(x)=0\stackrel{?}{\implies}H(x)=c,\qquad\forall x\in \langle a,b \rangle
+$$
+
+Neka su $x_1,x_2 \in \langle a,b \rangle,\quad x_1<x_2$.
+
+$$
+f \leftrightarrow H,\qquad a\leftrightarrow x_1,\qquad b\leftrightarrow x_2
+$$
+\newcolumn
+
+\noindent
+\textbf{Vrijedi:} $H$ je neprekidna na $[x_1,x_2]\subseteq [a,b]$ i derivabilna
+je na $\langle x_1,x_2 \rangle\subseteq\langle a,b \rangle \implies \exists c\in\langle x_1,x_2 \rangle$
+u kojoj je
+\begin{equation}
+    \label{eq:h_is_frac}
+    H'(x)=\frac{H(x_2)-H(x_1)}{x_2-x_1}\tag{B}
+\end{equation}
+
+Iz \ref{eq:h_is_zero} i \ref{eq:h_is_frac} slijedi:
+
+\begin{align*}
+H'(c) = 0 &= \frac{H(x_2)-H(x_1)}{x_2-x_1}\\
+H(x_2)-H(x_1) &= 0\\
+H(x_1) &= H(x_2),\qquad\forall x_1, x_2\in \langle a,b \rangle
+\end{align*}
+
+\noindent
+\textbf{Stavimo:}
+\begin{align*}
+    H(x_1)\coloneq& c,\quad c\in\mathbb{R}\\
+    \Downarrow&\\
+    H(x_2)=&c,\quad x_2\in\langle a,b \rangle\\
+    \Downarrow&\\
+    H(x)=&c,\quad x\in\langle a,b \rangle
+\end{align*}
+
+\noindent
+Dakle, $H(x) = F(x)-G(x)=c,\quad\forall x\in \langle a,b \rangle\implies\exists c\in\mathbb{R}\text{ takav da }F(x)=G(x)+c,\quad \forall x\in \langle a,b \rangle$.
+
+\end{multicols}
 
 \begin{examplebox}
     Neka je $f:[-2,1] \mapsto \mathbb{R}, f(x) = x^2$.
