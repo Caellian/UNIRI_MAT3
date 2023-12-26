@@ -1,9 +1,11 @@
-\section{L'Hospitalovo pravilo}
+\subsection{L'Hospitalovo pravilo}
 
 L'Hospitalovo pravilo služi za izračunavanje limesa neodređenih oblika $\frac{0}{0}$
 i $\frac{\infty}{\infty}$.
 
-\begin{definitionbox}[L'Hospitalovo pravilo]
+\begin{definition}[L'Hospitalovo pravilo]
+    \label{def:lhospital}
+
     Neka su zadane funkcije $f$ i $g$ neprekidne na $[a,b]$ za koje vrijedi:
     \begin{gather*}
         \lim_{x\to c}f(x) = \lim_{x\to c}g(x) = 0\\
@@ -15,18 +17,15 @@ i $\frac{\infty}{\infty}$.
     te da je $g'(x)\neq 0$ u okolini točke $c$. Ako postoji $\lim_{x\to c}\frac{f'(x)}{g'(x)}$ tada vrijedi:
 
     \center
-    \begin{equation}
-        \label{eq:lhospital}
-        \tag{l'hospitalovo pravilo}
-        \phantom{\text{(l'hospitalovo pravilo)}} % dunno why here and now...
+    \begin{equation*}
         \lim_{x\to c}\frac{f(x)}{g(x)} = \lim_{x\to c}\frac{f'(x)}{g'(x)}
-    \end{equation}
-\end{definitionbox}
+    \end{equation*}
+\end{definition}
 
 Pravilo je moguče primjeniti uzastopno ako su zadovoljeni uvjeti teorema za
 derivacije funkcija $f$ i $g$.
 
-\subsection{Neodređeni oblici}
+\subsubsection{Neodređeni oblici}
 
 Kod računanja limesa mogu se pojaviti i neodređeni oblici $0\cdot\infty$, $\infty - \infty$,
 $0^0$, $1^\infty$ i $\infty^0$ koji se primjenom odgovarajućih transformacija svode na

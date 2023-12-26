@@ -1,0 +1,149 @@
+\subsection{Parcijalna integracija}
+
+\textbf{Metoda parcijalne integracije} ili \textbf{uv-supstitucija} je postupak
+kojim se integrira produkt dvije funkcije. Izvodi se iz \fancyeq[pravila
+za][derivaciju produkta funkcija]{eq:diff_prod}.
+
+Metoda parcijalne integracije se provodi tako što se:
+\begin{enumerate}
+    \item odaberu funkcije $u(x)$ i $v'(x)$ takve da je za njih podintegralna
+    funkcija jednaka $u(x)v'(x)$,
+    \item računa $u'(x)$ i $v(x) = \int v'(x)dx$,
+    \item primjenjuje osnovna relacija, te
+    \item rješava preostali integral $\int u'(x)v(x) dx$.
+\end{enumerate}
+
+Ako je $P(x)$ polinom $n$-tog stupnja, a $a$ realan broj, onda parcijalnom
+integracijom rješavamo integrale sljedećeg tipa:
+
+$$
+\begin{array}{lll}
+    \displaystyle \int P(x)\sin(ax)dx & u=P(x) & dv=\sin(ax)dx,\\
+    \displaystyle \int P(x)\cos(ax)dx & u=P(x) & dv=\cos(ax)dx,\\
+    \displaystyle \int P(x)e^{ax}dx & u=P(x) & dv=e^{ax}dx,\\
+    \displaystyle \int P(x)\ln(ax)dx & u=\ln(ax)dx & dv=P(x),\\
+    \displaystyle \int P(x)\arctg(ax)dx & u=\arctg(ax)dx & dv=P(x),\\
+    \displaystyle \int P(x)\arcsin(ax)dx & u=\arcsin(ax)dx & dv=P(x).
+\end{array}
+$$
+
+U prva je tri slučaja broj potrebnih parcijalnih integracija jednak stupnju
+polinoma $P(x)$ jer se u svakom koraku stupanj polinoma u podintegralnoj
+funkciji snižava za jedan.
+
+\begin{example}
+    Izračunajte integrale:
+    \begin{enumerate}
+        \item $\displaystyle \int (x^2+3)e^xdx$
+        \item $\displaystyle \int (2x+1)\ln(2x)dx$
+        \item $\displaystyle \int (2x-3)\sin(5x) dx$
+        \item $\displaystyle \int x^2\sin(x)dx$
+    \end{enumerate}
+\end{example}
+
+\subsection{Racionalne funkcije}
+
+\textbf{Racionalna funkcija} je funkcija oblika
+$$
+R(x) = \frac{P_n(x)}{Q_m(x)},
+$$
+pri čemu su $P_n(x)$ i $Q_m(x)$ polinomi stupnja $n$, odnostno $m$.
+
+Ukoliko je $n < m$, kažemo da je racionalna funkcija \textbf{prava}.
+
+Ako je $n \geq m$, polinom u brojniku $P_n(x)$ dijelimo polinomom u nazivniku
+$Q_m(x)$ te koristeći rezultat dijeljenja $S_{n-m}$ i ostatak dijeljenja $T_k$,
+$k<m$ racionalnu funkciju $R$ rastavljamo na polinom i pravu racionalnu
+funkciju:
+$$
+R(x) = S_{n-m}(x) + \frac{T_k(x)}{Q_m(x)}.
+$$
+
+\begin{example}
+    Funkciju $R(x)=\frac{x^3+2x^2-2x+4}{x+3}$ rastavite na polinom i pravu
+    racionalnu funkciju.
+\end{example}
+
+\subsection{Faktorizacija polinoma}
+
+\textbf{Faktorizacija polinoma} $Q_m=a_mx^m+\dots+a_1x+a_0$ zapis je u obliku
+$$
+Q_m(x) = a_m(x-x_1)^{n_1}\dots(x-x_n)^{n_k}\cdot(x^2+p_1x+q_1)^{m_1}\dots(x^2+p_1x+q_1)^{m_l},
+$$
+
+\begin{itemize}
+    \item Ako je $\tilde{x}$ realni korijen polinoma $Q_m$ tada je
+    $$
+    Q_m(x) = (x-\tilde{x})Q_{m-1}(x),
+    $$
+    pa za nalaženje ostalih faktora treba faktorizirati polinom $Q_{m-1}$
+    stupanja $m-1$.
+    \item Ako su $z$ i $\tilde{z}$ par kompleksno konjugiranih korijena polinoma
+    $Q_m$ tada je
+    $$
+    Q_m(x) = (x^2+px+q)Q_{m-2}(x),
+    $$
+    pri čemu je $(x^2+px+q) = (x-z)(x-\tilde{z})$ pa za nalaženje ostalih
+    faktora treba faktorizirati polinom $Q_{m-2}$ stupnja $m-2$.
+\end{itemize}
+
+\begin{example}
+    Faktorizirajte polinom:
+    \begin{enumerate}
+        \item $Q_2(x) = x^2-10x+5$,
+        \item $Q_3(x) = x^3-3x^2+4x$,
+        \item $Q_3(x) = x^3-2x^2+x-2$,
+        \item $Q_3(x) = x^3-5x^2+9x-5$,
+        \item $Q_3(x) = x^3+3x-9$
+    \end{enumerate}
+\end{example}
+
+\subsection{Parcijalni razlomci}
+
+Pravu racionalnu funkciju možemo rastaviti na \textbf{parcijalne razlomke} ako nam je
+poznata faktorizacija polinoma $Q_m$ u nazivniku.
+
+Prilikom rastave na parcijalne razlomke vrijedi
+\begin{itemize}
+    \item svkom linearnom faktoru $(x-x_i)^{x_i}$ polinoma iz nazivnika odgovra
+    izraz
+    $$
+      \frac{A_{i1}}{x-x_i} + \frac{A_{i2}}{(x-x_i)^2} + \dots + \frac{A_{in_i}}{(x-x_i)^{n_i}},
+    $$
+    \item svakom kvadratnom faktoru $(x^2+p_jx+q_j)^{m_j}$ polinoma iz nazivnika
+    odgovara izraz
+    $$
+      \frac{B_{j1}x+C_{j1}}{x^2+p_jx+q_j} + \frac{B_{j2}x+C_{j2}}{(x^2+p_jx+q_j)^2} + \dots + \frac{B_{jm_j}x+C_{jm_j}}{(x^2+p_jx+q_j)^{m_j}}.
+    $$
+\end{itemize}
+
+Nepoznate koeficijenate $A_{il}$, $B_{jk}$ i $C_{jk}$ nalazimo iz same
+jednakosti rastava (množenjem s nazivnikom i izjednačavanjem koeficijenata uz
+iste postencije od $x$).
+
+\begin{example}
+    Rastavite na parcijalne razlomke funkcije:
+    \begin{enumerate}
+        \item $R(x)=\frac{x+2}{x^2-1}$,
+        \item $R(x)=\frac{2x^2+x+2}{x^3+x}$,
+        \item $R(x)=\frac{1}{x^3+2x^2+x}$,
+        \item $R(x)=\frac{x+1}{x^3-x^2}$.
+    \end{enumerate}
+\end{example}
+
+\subsection{Integriranje parcijalnih razlomaka}
+
+Integrale parcijalnih razlomaka svodimo na tablične integrale na sljedeći način:
+
+\begin{enumerate}
+    \item integral $\int \frac{dx}{(x-a)^n}$ supstitucijom $t=x-a$,
+    \item integral $\int \frac{2x+p}{(x^2+px+q)^n}$ supstitucijom $t=x^2+px+q$.
+\end{enumerate}
+
+\begin{example}
+    Izračunajte integral $\int R(x) dx$:
+    \begin{enumerate}
+        \item za racionalne funkcije $R(x)$ iz prethodnih primjera,
+        \item za $R(x) = \frac{x^5+x^4-8}{x^3-4x}$
+    \end{enumerate}
+\end{example}

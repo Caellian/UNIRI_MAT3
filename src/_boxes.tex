@@ -16,11 +16,11 @@
 \definecolor{colorexamplefg}{HTML}{27B29F}
 
 \newcounter{examplecounter}[section]
-\NewDocumentEnvironment{examplebox}{ o +b }{
+\NewDocumentEnvironment{example}{ o +b }{
     \refstepcounter{examplecounter} 
     \IfValueTF{#1}
-        {\begin{borderbox}{\faPencil}{Primjer \theexamplecounter: #1}{colorexamplefg}{colorexamplebg}}
-        {\begin{borderbox}{\faPencil}{Primjer \theexamplecounter}{colorexamplefg}{colorexamplebg}}
+        {\begin{borderbox}{\faPencil}{Primjer \thesection.\theexamplecounter: #1}{colorexamplefg}{colorexamplebg}}
+        {\begin{borderbox}{\faPencil}{Primjer \thesection.\theexamplecounter}{colorexamplefg}{colorexamplebg}}
     #2
 }{
     \end{borderbox}
@@ -30,22 +30,22 @@
 \definecolor{colordefinitionfg}{HTML}{0E7EF1}
 
 \newcounter{definitioncounter}[section]
-\NewDocumentEnvironment{definitionbox}{ o +b }{
+\NewDocumentEnvironment{definition}{ o +b }{
     \refstepcounter{definitioncounter} 
     \IfValueTF{#1}
-        {\begin{borderbox}{\faInfoCircle}{Definicija \thedefinitioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
-        {\begin{borderbox}{\faInfoCircle}{Definicija \thedefinitioncounter}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faInfoCircle}{Definicija \thesection.\thedefinitioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faInfoCircle}{Definicija \thesection.\thedefinitioncounter}{colordefinitionfg}{colordefinitionbg}}
     #2
 }{
     \end{borderbox}
 }
 
 \newcounter{theoremcounter}[section]
-\NewDocumentEnvironment{theorembox}{ o +b }{
+\NewDocumentEnvironment{theorem}{ o +b }{
     \refstepcounter{theoremcounter} 
     \IfValueTF{#1}
-        {\begin{borderbox}{\faInfoCircle}{Teorem \thetheoremcounter: #1}{colordefinitionfg}{colordefinitionbg}}
-        {\begin{borderbox}{\faInfoCircle}{Teorem \thetheoremcounter}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faInfoCircle}{Teorem \thesection.\thetheoremcounter: #1}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faInfoCircle}{Teorem \thesection.\thetheoremcounter}{colordefinitionfg}{colordefinitionbg}}
     #2
 }{
     \end{borderbox}
@@ -55,8 +55,8 @@
 \NewDocumentEnvironment{propositionbox}{ o +b }{
     \refstepcounter{propositioncounter} 
     \IfValueTF{#1}
-        {\begin{borderbox}{\faInfoCircle}{Propozicija \thepropositioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
-        {\begin{borderbox}{\faInfoCircle}{Propozicija \thepropositioncounter}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faInfoCircle}{Propozicija \thesection.\thepropositioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
+        {\begin{borderbox}{\faInfoCircle}{Propozicija \thesection.\thepropositioncounter}{colordefinitionfg}{colordefinitionbg}}
     #2
 }{
     \end{borderbox}

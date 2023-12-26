@@ -1,12 +1,12 @@
-\section{Diferencijalni račun}
+\subsection{Diferencijalni račun}
 
-\subsection{Osnovni teoremi}
+\subsubsection{Osnovni teoremi}
 
-\begin{theorembox}[fermatov teorem]
+\begin{theorem}[fermatov teorem]
     Neka funkcija $f$ definirana na intervalu $\langle a,b \rangle$ poprima u
     točki $c\in\langle a,b \rangle$ najveću ili najmanju vrijednost. Ako je $f$
     derivabilna u točki $c$, tada je $f'(c)=0$.
-\end{theorembox}
+\end{theorem}
 
 % TODO: Graf sa tangentom u maksimumu
 
@@ -21,7 +21,7 @@ f(c)\geq f(c+h)
 $$
 
 Primjećujemo da je taj izraz sastavljen od dva izraza koji se nalaze u
-\fancyeq[definiciji za][derivaciju funkcije]{eq:diff}.
+\fancyeq[definiciji za][derivaciju funkcije]{def:diff}.
 Svodimo ga na najednakost s definicijom te pokušavamo svesti $h$ na $0$ kako bi
 dobili $c+0=x$:
 
@@ -65,11 +65,11 @@ Stoga vrijedi $f'(c)\geq 0 \land f'(c)\leq 0 \implies f'(c)=0$.
 
 Dokaz za minimum je sličan.
 
-\begin{theorembox}[rolleov teorem]
+\begin{theorem}[rolleov teorem]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$ i derivabilna na $\langle a,b \rangle$.
     Ako je $f(a) = f(b)$, tada postoji barem jedna točka $c\in\langle a,b \rangle$
     u kojoj je $f'(c)=0$.
-\end{theorembox}
+\end{theorem}
 
 Recimo da je $k=f(a)=f(b)$.
 
@@ -104,10 +104,10 @@ $c$, vrijedi $f'(c)=0$.
 \textbf{Slučaj 3} je analogan slučaju 2, samo je maksimum zamjenjen minimumom.
 
 \newpage
-\begin{theorembox}[teorem o ekstremima]
+\begin{theorem}[teorem o ekstremima]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$. Tada funkcija $f$ na segmentu
     $[a,b]$ postiže minimalnu i maksimalnu vrijednost.
-\end{theorembox}
+\end{theorem}
 
 Jer je funkcija $f$ neprekidna na segmentu $[a,b]$, mora biti ograničena na tom
 segmentu prema teoremu o ograničenosti.
@@ -145,13 +145,13 @@ Drugim riječima, $f$ postiže svoj maksimum na intervalu $[a,b]$.
 Dokaz za minimum je sličan maksimumu.
 
 \newpage
-\begin{theorembox}[lagrangeov teorem srednje vrijednosti]
+\begin{theorem}[lagrangeov teorem srednje vrijednosti]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$ i derivabilna na $\langle a,b \rangle$.
     Tada postoji barem jedna točka $c\in\langle a,b \rangle$ u kojoj je
     $$
         f'(c) = \frac{f(b)-f(a)}{b-a}
     $$
-\end{theorembox}
+\end{theorem}
 
 \begin{multicols}{2}
 
@@ -235,8 +235,8 @@ Dakle, $H(x) = F(x)-G(x)=c,\quad\forall x\in \langle a,b \rangle\implies\exists 
 
 \end{multicols}
 
-\begin{examplebox}
+\begin{example}
     Neka je $f:[-2,1] \mapsto \mathbb{R}, f(x) = x^2$.
     Odredi točku $c\in\langle -2,1 \rangle$ u kojoj je tangenta na graf zadane
     funkcije paralelna sa sekantom koja prolazi točkama $(-2,4)$ i $(1,1)$.
-\end{examplebox}
+\end{example}

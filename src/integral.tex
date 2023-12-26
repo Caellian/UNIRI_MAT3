@@ -1,0 +1,137 @@
+\section{Integral}
+
+\subsection{Primitivna funkcija}
+Neka je $f: \langle a, b \rangle \mapsto \mathbb{R}$ funkcija.
+\textbf{Primitivna funkcija} funkcije $f$ na $\langle a, b \rangle$ je svaka
+funkcija $F: \langle a, b \rangle \mapsto \mathbb{R}$ sa svojstvom:
+
+$$
+F'(x) = f(x),\quad\forall x \in \langle a, b \rangle.
+$$
+
+\begin{theorem}
+    Neka je $f: \langle a, b \rangle \mapsto \mathbb{R}$ funkcija, i $F$ i $G$
+    bilo koje dvije primitivne funkcije od $f$ na $\langle a, b \rangle$. Tada
+    postoji konstanta $C\in\mathbb{R}$ takva da vrijedi:
+
+    $$
+    F(x) = G(x) + C,\quad\forall x \in \langle a, b \rangle.
+    $$
+\end{theorem}
+
+\begin{theorem}[Lagrangeov teorem srednje vrijednosti]
+    Neka je funkcija $f$ neprekidna na segmentu $[a, b]$ i derivabilna na
+    $\langle a, b\rangle$. Tada postoji barem jedna točka $c \in\langle a,
+    b\rangle$ u kojoj je $f'(c)=\frac{f(b)-f(a)}{b-a}$.
+\end{theorem}
+
+\begin{example}
+    Odredite jednu primitivnu funkciju sljedećih funkcija:
+    \begin{enumerate}
+        \item $f(x) = \sin x$,
+        \item $f(x) = e^x$,
+        \item $f(x) = {1\over x}$,
+        \item $f(x) = {1\over \sqrt{x}}$.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    Odredite primitivnu funkciju $F(x)$ funkcije:
+    $$
+        f(x) = \begin{cases}
+            2, & x < 0, \\
+            e^x, & x \geq 0.
+        \end{cases}
+    $$
+
+    koja je neprekidna i za koju vrijedi $F(-1) = 4$.
+\end{example}
+
+\subsection{Neodređeni integral}
+
+\textbf{Neodređeni integral} funkcije $f$, s oznakom $\int f(x)dx$, je skup svih
+primitivnih funkcija funkcije $f(x)$. Vrijedi:
+
+$$
+\int f(x)dx = \{F(x) + C\ |\ C\in\mathbb{R}\},
+$$
+
+pri čemu $F(x)$ označava primitivnu funkciju funkcije $f(x)$, a $C$ konstantu.
+
+Prema tome su neodređeni integral i derivacija inverzne operacije te su povezane
+sljedećim relacijama:
+
+\begin{align*}
+    \left(\int f(x) dx\right)' &= f(x),\\
+    \int F'(x) dx &= F(x) + C.
+\end{align*}
+
+Derivacija integrala jednaka je podintegralnoj funkciji, odnosno integriranje
+poništava deriviranje do na konstantu.
+
+\subsection{Direktna integracija}
+
+Budući da je neodređeni integral "\textit{antiderivacija}", čitanjem tablice
+derivacija u obrnutom smjeru dobivamo tablicu integrala.
+
+Iz svojstva linearnosti derivacije slijedi \textbf{svojstvo linearnosti}
+neodređenog integrala:
+
+$$
+\int \left[af(x) + bg(x)\right] dx = a \int f(x) dx + b \int g(x) dx.
+$$
+
+\textbf{Direktna integracija} svodi se na primjenu tablice integrala i svojstva
+linearnosti.
+
+\begin{example}
+    Izračunajte integrale:
+
+    \begin{enumerate}
+        \item $\displaystyle \int \left(4 cos(x) + {1\over 2} x^3 - 3\right)$
+        \item $\displaystyle \int \left(1-{1\over x^2}\right)
+        \sqrt{x\sqrt{x}}dx$
+    \end{enumerate}
+\end{example}
+
+\subsection{Metoda supstitucije}
+
+\textbf{Metoda supstitucije}, također nazvana i \textbf{u-supstitucija} je
+postupak u kojem se zamjenom stare varijable integracije novom, neodređeni
+integral transformira u novi oblik.
+
+Izvodi se iz pravila za derivaciju kompozicije funkcija.
+
+\bigskip
+\noindent
+Za primjenu metode supstitucije potreban je integral oblika:
+$$
+\int f[g(x)]g'(x)dx,
+$$
+
+\noindent
+a primjenjujemo ju tako da:
+\begin{enumerate}
+    \item ako je potrebno, uređujemo funkciju kako bi mogli primjeniti metodu
+    supstitucije,
+    \item odabiremo novu varijablu integracije $u = g(x)$, pri čemu je $g(x)$
+    derivabilna funkcija,
+    \item određujemo $du = g'(x)dx$,
+    \item zamjenom varijabli u integralu dobivamo novi integral u kojem je
+    integrirana varijabla $u$, koji je jednostavnijeg oblika: $\displaystyle
+    \int f[g(x)]g'(x)dx = \int f(u)du,$
+    \item rješavanjem tog integrala dobivamo: $\displaystyle \int f(u)du = F(u)
+    + C$, te konačno,
+    \item vraćamo se na staru varijablu integracije $x$: $F(u) + C = F[g(x)] +
+    C.$
+\end{enumerate}
+
+\begin{example}
+    Izračunajte integrale:
+    \begin{enumerate}
+        \item $\displaystyle \int \cos (5x) dx$,
+        \item $\displaystyle \int \sqrt{2x + 3} dx$,
+        \item $\displaystyle \int {\ln x \over x} dx$,
+        \item $\displaystyle \int (3x^2+2x)e^{x^3+x^2} dx$,
+    \end{enumerate}
+\end{example}
