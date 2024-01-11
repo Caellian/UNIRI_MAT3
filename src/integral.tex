@@ -1,16 +1,16 @@
 \section{Integral}
 
 \subsection{Primitivna funkcija}
-Neka je $f: \langle a, b \rangle \mapsto \mathbb{R}$ funkcija.
+Neka je $f: \langle a, b \rangle \to \mathbb{R}$ funkcija.
 \textbf{Primitivna funkcija} funkcije $f$ na $\langle a, b \rangle$ je svaka
-funkcija $F: \langle a, b \rangle \mapsto \mathbb{R}$ sa svojstvom:
+funkcija $F: \langle a, b \rangle \to \mathbb{R}$ sa svojstvom:
 
 $$
 F'(x) = f(x),\quad\forall x \in \langle a, b \rangle.
 $$
 
 \begin{theorem}
-    Neka je $f: \langle a, b \rangle \mapsto \mathbb{R}$ funkcija, i $F$ i $G$
+    Neka je $f: \langle a, b \rangle \to \mathbb{R}$ funkcija, i $F$ i $G$
     bilo koje dvije primitivne funkcije od $f$ na $\langle a, b \rangle$. Tada
     postoji konstanta $C\in\mathbb{R}$ takva da vrijedi:
 
@@ -30,8 +30,8 @@ $$
     \begin{enumerate}
         \item $f(x) = \sin x$,
         \item $f(x) = e^x$,
-        \item $f(x) = {1\over x}$,
-        \item $f(x) = {1\over \sqrt{x}}$.
+        \item $f(x) = {\frac{1}{x}}$,
+        \item $f(x) = {\frac{1}{\sqrt{x}}}$.
     \end{enumerate}
 \end{example}
 
@@ -85,12 +85,10 @@ $$
 linearnosti.
 
 \begin{example}
-    Izračunajte integrale:
+    Izračunajte integral:
 
     \begin{enumerate}
-        \item $\displaystyle \int \left(4 cos(x) + {1\over 2} x^3 - 3\right)$
-        \item $\displaystyle \int \left(1-{1\over x^2}\right)
-        \sqrt{x\sqrt{x}}dx$
+        \item $\displaystyle \int \left(4 cos(x) + \frac{1}{2} x^3 - 3\right)$
     \end{enumerate}
 \end{example}
 
@@ -98,7 +96,8 @@ linearnosti.
 
 \textbf{Metoda supstitucije}, također nazvana i \textbf{u-supstitucija} je
 postupak u kojem se zamjenom stare varijable integracije novom, neodređeni
-integral transformira u novi oblik.
+integral transformira u novi oblik. Primjenjuje se kada želimo integrirati neku
+kompozicuju funkcija.
 
 Izvodi se iz pravila za derivaciju kompozicije funkcija.
 
@@ -118,7 +117,7 @@ a primjenjujemo ju tako da:
     derivabilna funkcija,
     \item određujemo $du = g'(x)dx$,
     \item zamjenom varijabli u integralu dobivamo novi integral u kojem je
-    integrirana varijabla $u$, koji je jednostavnijeg oblika: $\displaystyle
+    integrirana varijabla $u$, a koji je jednostavnijeg oblika: $\displaystyle
     \int f[g(x)]g'(x)dx = \int f(u)du,$
     \item rješavanjem tog integrala dobivamo: $\displaystyle \int f(u)du = F(u)
     + C$, te konačno,
@@ -131,7 +130,12 @@ a primjenjujemo ju tako da:
     \begin{enumerate}
         \item $\displaystyle \int \cos (5x) dx$,
         \item $\displaystyle \int \sqrt{2x + 3} dx$,
-        \item $\displaystyle \int {\ln x \over x} dx$,
+        \item $\displaystyle \int \frac{\ln x}{x} dx$,
         \item $\displaystyle \int (3x^2+2x)e^{x^3+x^2} dx$,
     \end{enumerate}
 \end{example}
+
+\begin{align*}
+\int \cos 5x\,dx &= \begin{Bmatrix} u = 5x \\ du = (5x)'dx = 5dx \\ dx = \frac{du}{5} \end{Bmatrix} = \int \cos u\,du \\
+                 &= \frac{1}{5}\sin u + C = \frac{1}{5}\sin 5x + C, \qquad C \in \mathbb{R}
+\end{align*}

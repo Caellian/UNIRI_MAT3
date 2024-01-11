@@ -2,28 +2,40 @@
 
 \textbf{Metoda parcijalne integracije} ili \textbf{uv-supstitucija} je postupak
 kojim se integrira produkt dvije funkcije. Izvodi se iz \fancyeq[pravila
-za][derivaciju produkta funkcija]{eq:diff_prod}.
+za][derivaciju produkta funkcija]{eq:diff_prod}. Primjenjuje se kada želimo
+integrirati produkt dvije funkcije.
+
+
+Formula za primjenu parcijalne integracije je:
+
+$$
+\int u\,dv = uv - \int v\,du\,.
+$$
 
 Metoda parcijalne integracije se provodi tako što se:
 \begin{enumerate}
-    \item odaberu funkcije $u(x)$ i $v'(x)$ takve da je za njih podintegralna
-    funkcija jednaka $u(x)v'(x)$,
-    \item računa $u'(x)$ i $v(x) = \int v'(x)dx$,
-    \item primjenjuje osnovna relacija, te
-    \item rješava preostali integral $\int u'(x)v(x) dx$.
+    \item odaberu izrazi $u$ i $dv$ takve da je za njih podintegralna funkcija
+    jednaka $u\,dv$,
+    \item računaju $du$ i $v$,
+    \item uvrštavamo nazad u $\displaystyle uv - \int v\,du$, te
+    \item rješava preostali podintegralni izraz oblika $v\,du$.
 \end{enumerate}
+
+$u$ i $dv$ biramo na tako da $v\,du$ bude što lakše integrirati, tj. da se što
+više "pojednostavi" podintegralni izraz. Ako je dobiveni podintegralni izraz
+jednako složen kao i početni, onda su $u$ i $dv$ loše odabrani.
 
 Ako je $P(x)$ polinom $n$-tog stupnja, a $a$ realan broj, onda parcijalnom
 integracijom rješavamo integrale sljedećeg tipa:
 
 $$
 \begin{array}{lll}
-    \displaystyle \int P(x)\sin(ax)dx & u=P(x) & dv=\sin(ax)dx,\\
-    \displaystyle \int P(x)\cos(ax)dx & u=P(x) & dv=\cos(ax)dx,\\
+    \displaystyle \int P(x)\sin ax\,dx & u=P(x) & dv=\sin ax\,dx,\\
+    \displaystyle \int P(x)\cos ax\,dx & u=P(x) & dv=\cos ax\,dx,\\
     \displaystyle \int P(x)e^{ax}dx & u=P(x) & dv=e^{ax}dx,\\
-    \displaystyle \int P(x)\ln(ax)dx & u=\ln(ax)dx & dv=P(x),\\
-    \displaystyle \int P(x)\arctg(ax)dx & u=\arctg(ax)dx & dv=P(x),\\
-    \displaystyle \int P(x)\arcsin(ax)dx & u=\arcsin(ax)dx & dv=P(x).
+    \displaystyle \int P(x)\ln ax\,dx & u=\ln ax\,dx & dv=P(x),\\
+    \displaystyle \int P(x)\arctg ax\,dx & u=\arctg ax\,dx & dv=P(x),\\
+    \displaystyle \int P(x)\arcsin ax\,dx & u=\arcsin ax\,dx & dv=P(x).
 \end{array}
 $$
 
@@ -64,7 +76,36 @@ $$
     racionalnu funkciju.
 \end{example}
 
+\begin{multicols}{2}
+\begin{alignat*}{9}
+                &&& x^2 &-& x &+& 1\\
+                \cline{2-9}
+x+3 \quad|\quad &x^3 &+& 2x^2 &-& 2x &+& 4 \\
+                -(&x^3 &+& 3x^2)\\
+                \cline{2-9}
+                && -&x^2 &-&2x &+& 4 \\
+                && -(-&x^2 &-& 3x) \\
+                \cline{2-9}
+                &&&&&x &-& 4\\
+                &&&&-(&x &+& 3)\\
+                \cline{2-9}
+                &&&&&&&1
+\end{alignat*}
+\columnbreak
+\vspace*{\stretch{1.4}}
+\begin{align*}
+    \frac{x^3}{x} = \boxed{x^2}&&(x+3)\cdot x^2 = \boxed{x^3 + 3x^2}&\\\\
+    \frac{-x^2}{x} = \boxed{-x}&&(x+3)\cdot -x = \boxed{-x^2 - 3x}&\\\\
+    \frac{x}{x} = \boxed{1}&&(x+3)\cdot 1 = \boxed{x+3}&\\
+\end{align*}
+\vspace*{\stretch{0.6}}
+\end{multicols}
+
 \subsection{Faktorizacija polinoma}
+
+Polinom $Q_m(x)$ stupnja $m$ ima točno $m$ korijena (samo jedan korijen ako je
+$m=0$), kada ubrajamo i ponavljanje. Ako je $x_i$ korijen polinoma $Q_m(x)$ tada
+je $Q_m(x)$ djeljiv s $(x-x_i)$, odnosno $Q_m(x) = (x-x_i)Q_{m-1}(x)$.
 
 \textbf{Faktorizacija polinoma} $Q_m=a_mx^m+\dots+a_1x+a_0$ zapis je u obliku
 $$
@@ -87,21 +128,68 @@ $$
     faktora treba faktorizirati polinom $Q_{m-2}$ stupnja $m-2$.
 \end{itemize}
 
+\textbf{Primjer realnog korijena:}
+
+Ako je zadan polinom $Q_3(x) = x^3-5x^2+9x-5$, konstanta uz vodeći koeficijent je 6,
+a konstanta uz slobodni član je $-2$. Njegovi korijeni su onda kombinacije svih
+mogućih dijelitelja tih konstanta u obliku $\pm\frac{p}{q}$, gdje je $p$
+dijelitelj konstante uz slobodni član, a $q$ dijelitelj konstante uz vodeći
+koeficijent.
+
+U danom primjeru to su:
+\begin{gather*}
+p\in\{\pm1, \pm3\}\\
+q\in\{\pm1, \pm5\}
+\end{gather*}
+
+Tako da su svi mogući korijeni polinoma $Q_3(x)$:
+\begin{gather*}
+\pm 1/1, \pm 1/5,\\
+\pm 3/1, \pm 3/5.
+\end{gather*}
+
+Uvrštavanjem u polinom redom, nalazimo korijen polinoma za kojeg je vrijednost
+polinoma jednaka $0$. U ovom slučaju to je $x=1/1$ tj. $1$.
+
+Tu se radi o realnom korijenu pa je faktorizacija polinoma $Q_3(x)$:
+$$
+Q_3(x) = (x-1)Q_2(x).
+$$
+
+\textbf{Primjer kompleksnog korijena:}
+
+Ako je zadan polinom $Q_3(x) = x^3-3x^2+4x-2$. Znamo da postoji točno $3$
+korijena polinoma $Q_3(x)$ jer je broj korijena jednak stupnju polinoma.
+
+
+
+konstanta uz vodeći koeficijent je 6,
+a konstanta uz slobodni član je $-2$. Dobivamo moguće korijene:
+
+\begin{gather*}
+p\in\{\pm1, \pm3\},\\
+q\in\{\pm1, \pm2\},\\
+\pm 1/1, \pm 1/2, \pm 3/1, \pm 3/2.\\
+\end{gather*}
+
+Uvrštavanjem u polinom redom, nalazimo korijen polinoma za kojeg je vrijednost
+polinoma jednaka $0$. U ovom slučaju to je $x=1/1$ tj. $1$.
+
+
 \begin{example}
     Faktorizirajte polinom:
     \begin{enumerate}
         \item $Q_2(x) = x^2-10x+5$,
         \item $Q_3(x) = x^3-3x^2+4x$,
         \item $Q_3(x) = x^3-2x^2+x-2$,
-        \item $Q_3(x) = x^3-5x^2+9x-5$,
         \item $Q_3(x) = x^3+3x-9$
     \end{enumerate}
 \end{example}
 
 \subsection{Parcijalni razlomci}
 
-Pravu racionalnu funkciju možemo rastaviti na \textbf{parcijalne razlomke} ako nam je
-poznata faktorizacija polinoma $Q_m$ u nazivniku.
+Pravu racionalnu funkciju možemo rastaviti na \textbf{parcijalne razlomke} ako
+nam je poznata faktorizacija polinoma $Q_m$ u nazivniku.
 
 Prilikom rastave na parcijalne razlomke vrijedi
 \begin{itemize}

@@ -1,0 +1,157 @@
+\subsection{Parcijalna derivacija}
+
+\textbf{Funkcija dvije varijable} je funkcija
+
+$$
+f: \mathrm{S} \to \mathbb{R}, \mathrm{S} \subseteq \mathbb{R}^2, (x, y) \mapsto f(x,y).
+$$
+
+\textbf{Prirodna domena} funkcije dvije varijable $f$ je najveći podskup od
+$\mathbb{R}^2$ na kojem formula $f(x,y)$ ima smisla.
+
+\textbf{Graf} funkcije dvije varijable $f$ je skup
+$$
+  \{(x,y,z)\in\mathbb{R}^3\ |\ z=f(x,y),\ (x,y)\in\mathrm{S}\}.
+$$
+
+\begin{example}
+  Odredite i skicirajte prirodnu domenu funkcije $f(x,y)=\ln(x+y)$.
+\end{example}
+
+Parcijalna derivacija funkcije $f(x,y,\dots)$ po varijabli $x$ se označava kao:
+$$
+f_x, f_x', \partial_x f, \frac{\partial}{\partial x}f, \text{ili}\ \frac{\partial f}{\partial x},
+$$
+te opisuje promjenu funkcije u $x$-smjeru.
+
+\begin{definition}
+    \label{def:diff_partial}
+    Neka je $\mathbf{S}$ otvoreni podskup skupa $\mathbb{R}^n$ te neka je
+    funkcija $f:\mathbf{S}\to \mathbb{R}$.
+
+    Parcijalna derivacija $f$ u točki $\mathbf{a}=(a_1, a_2, \dots,
+    a_n)\in\mathbf{S}$ po $i$-toj varijabli $x_i$ je:
+    
+    \begin{align*}
+        \frac{\partial }{\partial x_i }f(\mathbf{a}) & = \lim_{h \to 0} \frac{f(a_1, \ldots , a_i+h, \ldots ,a_n) -
+        f(a_1, \ldots, a_i, \dots ,a_n)}{h} \\ 
+        & = \lim_{h \to 0} \frac{f(\mathbf{a}+h \cdot \mathbf{e_i}) - f(\mathbf{a})}{h}\,,
+    \end{align*}
+
+    gdje $e_i$ predstavlja jedinični vektor u $i$-tom smjeru, a $h$ je pomak u
+    $i$-tom smjeru.
+\end{definition}
+
+Neka je $f(x,y)$ funkcija dvije varijable. \textbf{Parcijalna derivacija
+funkcije $f$ po varijabli $x$} je
+$$
+  \frac{\partial f}{\partial x} = \lim_{\Delta x\to 0} \frac{f(x+\Delta x,y)-f(x,y)}{\Delta x}.
+$$
+
+\textbf{Parcijalna derivacija funkcije $f$ po varijabli $y$} je
+$$
+  \frac{\partial f}{\partial y} = \lim_{\Delta y\to 0} \frac{f(x+\Delta y,y)-f(x,y)}{\Delta y}.
+$$
+
+\subsubsection{Parcijalna derivacija višeg reda}
+
+Parcijalnu derivaciju funkcije višeg reda dobivamo analogno derivaciji višeg
+reda.
+
+Neka je $f(x,y)$ funkcija dvije varijable.
+
+\begin{align*}
+  \frac{\partial f}{\partial x^2} &= \frac{\partial}{\partial x} (\frac{\partial f}{\partial x}),\\
+  \frac{\partial f}{\partial x \partial y} &= \frac{\partial}{\partial x} (\frac{\partial f}{\partial y}),\\
+  \frac{\partial f}{\partial y \partial x} &= \frac{\partial}{\partial y} (\frac{\partial f}{\partial x}),\\
+  \frac{\partial f}{\partial y^2} &= \frac{\partial}{\partial y} (\frac{\partial f}{\partial y}),\\
+\end{align*}
+
+\begin{example}
+  Odredite parcijalne derivacije drugog reda funkcije $f(x,y)=x^3y+x\sin y$.
+\end{example}
+
+\subsection{Gradijent}
+
+\textbf{Gradijent funkcije} $f(x,y,\dots)$ je vektor čije su komponente
+parcijalne derivacije funkcije $f$ po svakoj varijabli.
+
+Često se označava kao $\nabla f$, te je za funkciju sa dvije varijable $f(x,y)$ jednak:
+$$
+  \nabla f(x,y) = \left[\frac{\partial}{\partial x}\right]\hat{i} + \left[\frac{\partial}{\partial y}\right]\hat{j}.
+$$
+
+No vrijedi i analog za funkcije s večim brojem varijabli, te se generalno, za
+funkciju $f(x_1, \dots, x_n)$, sa jediničnim vektorima
+$\hat{e}_1,\dots,\hat{e}_n$ može zapisati:
+$$
+  \nabla f(x_1, \dots, x_n) = \sum_{i=1}^n \left[\frac{\partial}{\partial x_i}\right]\hat{e}_i = \left[\frac{\partial}{\partial x_1}\right]\hat{e}_1 + \left[\frac{\partial}{\partial x_2}\right]\hat{e}_2 + \dots + \left[\frac{\partial}{\partial x_n}\right]\hat{e}_n.
+$$
+
+\textbf{Totalni diferencijal prvog reda} funkcije $f$ je definiran s
+$$
+df(x,y) = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy.
+$$
+
+\subsection{Tangencijalna ravnina}
+
+Tangencijalna ravnina funkcije $f(x,y)$ u točki $(x_0, y_0)$ je ravnina koja
+sadrži tangente na funkciju $f$ u točki $(x_0, y_0)$.
+
+\tikzset
+{ surface/.style={draw=blue,shading=ball,ball color=cyan!60!blue,fill
+  opacity=0.8}, plane/.style={draw=orange,fill=orange,fill opacity=0.6},
+  vector/.style={draw=magenta,thick,-latex} }
+
+% Source: https://tex.stackexchange.com/questions/679299/i-have-to-reproduce-a-figure-of-tangent-plane-to-a-surface-in-mathbbr3
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,3d view={110}{20},scale=1.5]
+  % dimensions
+  \def\r{2}    % sphere radius
+  \def\c{0.5}  % center C position
+  \def\cx{0.5} % curve x position
+  \pgfmathsetmacro\ra{sqrt(\r*\r-\c*\c)} % radius, arcs in the sphere
+  
+  \pgfmathsetmacro\rc{sqrt(\r*\r-(\c+\cx)*(\c+\cx))} % radius, curve
+  \pgfmathsetmacro\axy{asin(\c/\r)}                  % angles in xy plane
+  \pgfmathsetmacro\ayz{asin(\c/\ra)}                 % angles in yz plane 
+  \pgfmathsetmacro\ar{asin((\c+\cx)/\r} % rotation angle for plane and vectors
+  % coordinates
+  \coordinate (C) at (-\c,\c,0); % sphere center
+  \coordinate (O) at (0,0,0); \coordinate (P) at
+  (\cx,\c,{sqrt(\r*\r-(\c+\cx)*(\c+\cx))}); \coordinate (G) at ($(C)!1.7!(P)$);
+  % gradient
+  % axes
+  \draw[-latex] (O) -- (\r+1,0,0) node[left]  {$x$}; \draw[-latex] (O) --
+  (0,\r+1,0) node[right] {$y$}; \draw[-latex] (O) -- (0,0,\r+1) node[above]
+  {$z$};
+  % surface
+  \draw[surface] (C) ++ (-\axy:\r) arc (-\axy:90-\axy:\r) {[canvas is yz plane
+      at x=0] arc (0:90+\ayz:\ra)} {[canvas is xz plane at y=0] arc
+      (90-\ayz:0:\ra)};
+  % curve
+  \draw[canvas is yz plane at x=\cx,yellow] (\c+\rc,0) arc
+  (0:{90+asin(\c/\rc)}:\rc);
+  % plane
+  \draw[plane,shift={(P)},rotate around y=\ar,canvas is xy plane at z=0]
+  (-1,-1.5) -|++ (2,3) -| cycle;
+  % Point P
+  \fill (P) circle (0.4mm) node[below] {$P$};
+  % vectors
+  \begin{scope}[shift={(P)},rotate around y=270+\ar,canvas is xy plane at z=0]
+    \draw[vector]  (0.04,0) -- (G) node[above right,black] {$\nabla
+    F(x_0,y_0,z_0)$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+$$
+  P(x_0, y_0, z_0) \Rightarrow \frac{\partial f}{\partial x}(x_0, y_0)(x-x_0) + \frac{\partial f}{\partial y}(x_0,y_0)(y-y_0) - (z-z_0) = 0
+$$
+
+Normala tangencijalne ravnije je gradijent kao što je prikazano na slici.
+
+\begin{example}
+  Odredite jednadžbu tangencijalne ravnine na plohu $z=x^2+y^2$ u točki $(1, -2,
+  z_0)$.
+\end{example}
