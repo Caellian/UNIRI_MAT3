@@ -4,16 +4,61 @@ Implicitno zadanu funkciju $F(x,y) = 0$ se derivira tako da se izraze koji sadr�
 zavisnu varijablu $y=y(x)$ derivira koristeći pravilo za deriviranje kompozicije
 funkcija.
 
-\begin{example}[deriviranje implicitno zadane funkcije]
-    Deriviraj implicitno zadane funkcije:
+Ne smijemo tretirati $y$ kao konstantu jer ako izrazimo $y$ kao funkciju od $x$
+možemo primjetiti da su im vrijednosti međusobno zavisne.
 
-    \begin{enumerate}
-        \item $xy-1=0$
-        \item $y^2-x=0$
-        \item $xe^y+y=0$
-        \item $y^2-xy+x\ln y = 1$
-    \end{enumerate}
+\begin{multicols}{2}
+\begin{example}[deriviranje implicitno zadane funkcije]
+    Deriviraj implicitno zadanu funkciju: $\displaystyle x^2 + y^2 = 1$
 \end{example}
+
+Deriviramo obje strane zadanog izraza:
+\smallskip
+
+\begin{tabular}{cl}
+    \vspace*{11pt}$\displaystyle \frac{d}{dx}\left[x^2 + y^2\right] = \frac{d}{dx}[1]$\\
+    \vspace*{11pt}$\displaystyle \frac{d}{dx}\left[x^2\right] + \frac{d}{dx}\left[y^2\right] = 0$\\
+    \vspace*{11pt} $y^2$ tretiramo kao $y(x)$: $\displaystyle \frac{d}{dx}[(y(x))^2] = 2y\cdot\frac{dy}{dx}$\\
+    \vspace*{11pt}$\displaystyle 2x + \frac{d(y^2)}{dy}\cdot\frac{dy}{dx} = 0$\\
+    \vspace*{11pt}$\displaystyle 2x + 2y\cdot\frac{dy}{dx} = 0$\\
+    \vspace*{11pt}$\displaystyle\phantom{\quad / \div 2y} 2y\cdot\frac{dy}{dx} = -2x\quad / \div 2y$ \\
+    \vspace*{11pt}$\displaystyle\frac{dy}{dx} = -\frac{x}{y}$
+\end{tabular}
+
+\vspace*{\stretch{1}}
+\columnbreak
+
+\begin{example}[nagib implicitno zadane funkcije]
+    Odredite nagib koji poprima implicitno zadana funkcija $x^2+(y-x)^3=28$ kada je $x=1$.
+\end{example}
+
+Kako bismo dobili $y$, uvrštavamo $x=1$ u zadanu funkciju:
+\begin{gather*}
+    1+(y-1)^3 = 28\\
+    (y-1)^3 = 27\\
+    y-1 = 3\\
+    y = 4
+\end{gather*}
+
+Dakle zanima nas nagib funkcije za točku $(1,4)$.
+
+\begin{gather*}
+    \frac{d}{dx}\left[x^2+(y-x)^3\right]=\frac{d}{dx}\left[28\right]\\
+    2x+3(y-x)^2\left(\frac{dy}{dx} - 1\right) = 0\\
+    2x+3(y-x)^2\frac{dy}{dx} - 3(y-x)^2 = 0\\
+    3(y-x)^2\frac{dy}{dx} = 3(y-x)^2 - 2x\\
+    \frac{dy}{dx} = \frac{3(y-x)^2 - 2x}{3(y-x)^2} = 1 - \frac{2x}{3(y-x)^2}
+\end{gather*}
+
+Uvrštavanjem $x=1$ i $y=4$ u dobiveni izraz, dobivamo nagib funkcije $(\frac{dy}{dx})$ u točki $(1,4)$:
+
+$$
+\frac{dy}{dx} = 1 - \frac{2\cdot 1}{3(4-1)^2} = 1 - \frac{2}{3\cdot 9} = 1 - \frac{2}{27} = \frac{25}{27}
+$$
+
+\end{multicols}
+
+\newpage
 
 \subsection{Logaritamsko deriviranje}
 
@@ -34,14 +79,33 @@ Postupak kojim se dolazi do derivacije sastoji se od tri koraka:
     \item sređivanje dobivene jednakosti.
 \end{itemize}
 
+\begin{multicols}{2}
 \begin{example}[logaritamsko deriviranje]
-    Deriviraj funkcije:
-
-    \begin{enumerate}
-        \item $y=x^{x^2}$
-        \item $y=(\ln x)^{\sin x}$
-    \end{enumerate}
+    Deriviraj funkciju $y=x^{x^2}$.
 \end{example}
+
+\begin{gather*}
+    y=x^{x^2} \xrightarrow{\ln} \ln y= \ln \left(x^{x^2}\right) = x^2 \ln x \phantom{y=x^{x^2} \to}\\
+    \frac{d}{dx}[\ln y] = \frac{d}{dx} \left[ x^2 \ln x \right]\\
+    \frac{dy}{dx}\cdot\frac{1}{y}=2x \ln x + x^{\cancel{2}}\cdot\frac{1}{\cancel{x}}\\
+    \frac{dy}{dx} = y (2x\ln x + x) = \boxed{x^{x^2} (2x\ln x + x)}
+\end{gather*}
+
+\columnbreak
+
+\begin{example}[logaritamsko deriviranje]
+    Deriviraj funkciju $y=(\ln x)^{\sin x}$.
+\end{example}
+
+\begin{gather*}
+    \ln x = \sin x \ln (\ln x)\\
+    \frac{dy}{dx}\cdot\frac{1}{y} = \cos x \ln (\ln x) + \sin x \cdot \frac{1}{\ln x} \cdot \frac{1}{x}\\
+    \frac{dy}{dx} = y (\cos x \ln (\ln x) + \frac{\sin x}{x \ln x})\\
+    \frac{dy}{dx} = \boxed{(\ln x)^{\sin x}\left[\cos x \ln (\ln x) + \frac{\sin x}{x \ln x}\right]}
+\end{gather*}
+
+\end{multicols}
+
 
 \subsection{Deriviranje parametarski zadane funkcije}
 
@@ -52,14 +116,16 @@ Kada je funkcija $y=y(x)$ parametarski zadana sa: $\displaystyle
 \end{cases},
 $ tada je:
 
-\begin{align*}
-y'&=\frac{\dot{y}}{\dot{x}},\\
-y''&=\frac{\dot{y'}}{\dot{x}},\\
-\vdots&\\
-y^{(n)}&=\frac{\dot{y^{(n-1)}}}{\dot{x}}.
-\end{align*}
+\begin{center}
+    \begin{tabular}{ccccc}
+    $y'$&$=$&$\displaystyle\frac{\dot{y}}{\dot{x}}$&$=$&$\displaystyle\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$,\\
+    $y''$&$=$&$\displaystyle\frac{\dot{y'}}{\dot{x}}$,\\
+    &$\vdots$&\\
+    $y^{(n)}$&$=$&$\displaystyle\frac{\dot{y^{(n-1)}}}{\dot{x}}$.
+    \end{tabular}
+\end{center}
 
-\begin{example}[parametarski zadane funkcije]
+\begin{example}[deriviranje parametarski zadane funkcije]
     Odredi $y'$ i $y''$ za sljedeće funkcije:
 
     \begin{enumerate}
@@ -68,3 +134,4 @@ y^{(n)}&=\frac{\dot{y^{(n-1)}}}{\dot{x}}.
         \item $x=3\cos t,\quad y=\sin t,\quad t\in[0, 2\pi]$
     \end{enumerate}
 \end{example}
+

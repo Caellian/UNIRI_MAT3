@@ -91,11 +91,43 @@ Iz toga slijedi:
     $$
 \end{propositionbox}
 
+Ako je $h(x) = \frac{f(x)}{g(x)}$, onda vrijedi:
+
+\begin{align*}
+    h'(x) =& \lim_{k\to 0} \frac{h(x+k)-h(x)}{k}\\
+    =& \lim_{k\to 0} \frac{\frac{f(x+k)}{g(x+k)}-\frac{f(x)}{g(x)}}{k}\\
+    =& \lim_{k\to 0} \frac{f(x+k)g(x)-f(x)g(x+k)}{k\cdot g(x)g(x+k)}\\
+    =& \lim_{k\to 0} \frac{f(x+k)g(x)-f(x)g(x+k)}{k} \cdot \lim_{k\to 0}\frac{1}{g(x)g(x+k)}\\
+    =& \lim_{k\to 0} \left[\frac{f(x+k)g(x) - f(x)g(x) + f(x)g(x) - f(x)g(x+k)}{k} \right] \cdot \frac{1}{g(x)^2} \\
+    =& \left[\lim_{k\to 0} \frac{f(x+k)g(x) - f(x)g(x)}{k} - \lim_{k\to 0}\frac{f(x)g(x+k) - f(x)g(x)}{k} \right] \cdot \frac{1}{g(x)^2} \\
+    =& \left[\lim_{k\to 0} \frac{f(x+k) - f(x)}{k} \cdot g(x) - f(x) \cdot \lim_{k\to 0}\frac{g(x+k) - g(x)}{k} \right] \cdot \frac{1}{g(x)^2} \\
+    =& \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}.
+\end{align*}
+
+Gdje, jer je funkcija $g(x)$ neprekidna na promatranom intervalu, vrijedi:
+$$
+\lim_{k\to 0}\frac{1}{g(x)g(x+k)} = \lim_{k\to 0}\frac{1}{g(x)^2}
+$$
+
 \begin{propositionbox}[pravilo o deriviranju inverzne funkcije]
     $$
         (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}
     $$
 \end{propositionbox}
+
+
+\begin{align*}
+    f(f^{-1}(x)) = x \xrightarrow{der.}\qquad \frac{d}{dx} f(f^{-1}(x)) =& \frac{d}{dx} x \phantom{f(f^{-1}(x)) = x \to\qquad}\\
+    \frac{d\left( f(f^{-1}(x)) \right)}{d\left( f^{-1}(x) \right)} \frac{d\left(f^{-1}(x)\right)}{dx}
+    =& 1 \\
+    \frac{df(f^{-1}(x))}{df^{-1}(x)} \frac{df^{-1}(x)}{dx}
+    =& 1 \\
+    f'(f^{-1}(x))
+    (f^{-1})'(x)
+    =& 1\\
+    (f^{-1})'(x)
+    =& \frac{1}{f'(f^{-1}(x))}\\
+\end{align*}
 
 \begin{propositionbox}[pravilo o deriviranju kompozicije funkcija]
     $$
