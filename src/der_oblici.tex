@@ -84,12 +84,12 @@ Postupak kojim se dolazi do derivacije sastoji se od tri koraka:
     Deriviraj funkciju $y=x^{x^2}$.
 \end{example}
 
-\begin{gather*}
-    y=x^{x^2} \xrightarrow{\ln} \ln y= \ln \left(x^{x^2}\right) = x^2 \ln x \phantom{y=x^{x^2} \to}\\
-    \frac{d}{dx}[\ln y] = \frac{d}{dx} \left[ x^2 \ln x \right]\\
-    \frac{dy}{dx}\cdot\frac{1}{y}=2x \ln x + x^{\cancel{2}}\cdot\frac{1}{\cancel{x}}\\
-    \frac{dy}{dx} = y (2x\ln x + x) = \boxed{x^{x^2} (2x\ln x + x)}
-\end{gather*}
+\begin{align*}
+    y=x^{x^2} \xrightarrow{\ln} \ln y=& \underbrace{\ln \left(x^{x^2}\right)}_{x^2 \ln x}\\
+    \frac{d}{dx}[\ln y] =& \frac{d}{dx} \left[ x^2 \ln x \right]\\
+    \frac{dy}{dx}\cdot\frac{1}{y}=& 2x \ln x + x^{\cancel{2}}\cdot\frac{1}{\cancel{x}}\\
+    \frac{dy}{dx} = y (2x\ln x + x) =& \boxed{x^{x^2} (2x\ln x + x)}
+\end{align*}
 
 \columnbreak
 
@@ -97,12 +97,12 @@ Postupak kojim se dolazi do derivacije sastoji se od tri koraka:
     Deriviraj funkciju $y=(\ln x)^{\sin x}$.
 \end{example}
 
-\begin{gather*}
-    \ln x = \sin x \ln (\ln x)\\
-    \frac{dy}{dx}\cdot\frac{1}{y} = \cos x \ln (\ln x) + \sin x \cdot \frac{1}{\ln x} \cdot \frac{1}{x}\\
-    \frac{dy}{dx} = y (\cos x \ln (\ln x) + \frac{\sin x}{x \ln x})\\
-    \frac{dy}{dx} = \boxed{(\ln x)^{\sin x}\left[\cos x \ln (\ln x) + \frac{\sin x}{x \ln x}\right]}
-\end{gather*}
+\begin{align*}
+    \ln x = &\sin x \ln (\ln x)\\
+    \frac{dy}{dx}\cdot\frac{1}{y} =& \cos x \ln (\ln x) + \sin x \cdot \frac{1}{\ln x} \cdot \frac{1}{x}\\
+    \frac{dy}{dx} =& y (\cos x \ln (\ln x) + \frac{\sin x}{x \ln x})\\
+    \frac{dy}{dx} =& \boxed{(\ln x)^{\sin x}\left[\cos x \ln (\ln x) + \frac{\sin x}{x \ln x}\right]}
+\end{align*}
 
 \end{multicols}
 

@@ -6,9 +6,36 @@
     Neka funkcija $f$ definirana na intervalu $\langle a,b \rangle$ poprima u
     točki $c\in\langle a,b \rangle$ najveću ili najmanju vrijednost. Ako je $f$
     derivabilna u točki $c$, tada je $f'(c)=0$.
-\end{theorem}
 
-% TODO: Graf sa tangentom u maksimumu
+    \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            tick style={draw=none},
+            xtick=\empty,
+            ytick=\empty,
+            ymin=-15, ymax=25,
+            xmin=-1.2, xmax=1.25,
+            samples=100,
+            smooth,
+            width=25em,
+            height=15em,
+        ]
+        
+        \addplot [ultra thick, domain=-1.5:1.5] {18*x^3 + 6*x^2 - 10*x + 10} node[pos=0.5, below right] {$f(x)$};
+        \addplot [thin, domain=-1.5:1.5] {18*3*x^2 + 12*x - 10} node[pos=0.55, left] {$f'(x)$};
+        
+        \addplot [cGreen, domain=-1.05:-0.05] coordinates {(-30/54,-3)(-30/54,17.32099)};
+        \filldraw [cGreen] (-30/54, 14.32099) circle (2pt) node[black, anchor=south west] {$f(c_1)$};
+        \filldraw [black] (-30/54, 0) circle (1pt) node[anchor=north east] {$f'(c_1)$};
+        
+        \addplot [cRed, domain=-0.16:0.83] coordinates {(18/54,-3)(18/54,11)};
+        \filldraw [cRed] (18/54, 8) circle (2pt) node[black, anchor=south east] {$f(c_2)$};
+        \filldraw [black] (18/54, 0) circle (1pt) node[anchor=north west] {$f'(c_2)$};
+    
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+\end{theorem}
 
 Pretpostavimo da $f$ ima lokalni maksimum u $x=c$. Tj. $f(c)\geq f(x)$ za svaki
 $x$ koji se nalazi blizu $c$.
@@ -69,6 +96,8 @@ Dokaz za minimum je sličan.
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$ i derivabilna na $\langle a,b \rangle$.
     Ako je $f(a) = f(b)$, tada postoji barem jedna točka $c\in\langle a,b \rangle$
     u kojoj je $f'(c)=0$.
+
+    % TODO: dodati sliku koja prikazuje ideju rolleovog teorema
 \end{theorem}
 
 Recimo da je $k=f(a)=f(b)$.
@@ -107,6 +136,8 @@ $c$, vrijedi $f'(c)=0$.
 \begin{theorem}[teorem o ekstremima]
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$. Tada funkcija $f$ na segmentu
     $[a,b]$ postiže minimalnu i maksimalnu vrijednost.
+
+    % TODO: dodati sliku koja prikazuje ideju teorema o ekstremima
 \end{theorem}
 
 Jer je funkcija $f$ neprekidna na segmentu $[a,b]$, mora biti ograničena na tom
@@ -132,9 +163,9 @@ vrijedi $g(x)\leq K, \forall x [a,b]$.
 
 Slijedno tome,
 \begin{align*}
-\frac{1}{M-f(x)}\leq& K&/\times(M-f(x))\\
+\frac{1}{M-f(x)}\leq& K\qquad/\times(M-f(x))\\
 1\leq& KM-Kf(x)\\
-Kf(x)\leq& KM - 1&/\div K\\
+Kf(x)\leq& KM - 1\qquad/\div K\\
 f(x)\leq& M - \frac{1}{K}.\\
 \end{align*}
 
@@ -146,6 +177,8 @@ Dokaz za minimum je sličan maksimumu.
 
 \newpage
 \begin{theorem}[lagrangeov teorem srednje vrijednosti]
+    \label{thorem:lagrange}
+
     Neka je funkcija $f$ neprekidna na segmentu $[a,b]$ i derivabilna na $\langle a,b \rangle$.
     Tada postoji barem jedna točka $c\in\langle a,b \rangle$ u kojoj je
     $$
