@@ -1,0 +1,50 @@
+
+\section{Parcijalni razlomci}
+
+Pravu racionalnu funkciju možemo rastaviti na \textbf{parcijalne razlomke} ako
+nam je poznata faktorizacija polinoma $Q_m$ u nazivniku.
+
+Prilikom rastave na parcijalne razlomke vrijedi
+\begin{itemize}
+    \item svakom linearnom faktoru $(x-x_i)^{x_i}$ polinoma iz nazivnika odgovra
+    izraz
+    $$
+      \frac{A_{i1}}{x-x_i} + \frac{A_{i2}}{(x-x_i)^2} + \dots + \frac{A_{in_i}}{(x-x_i)^{n_i}},
+    $$
+    \item svakom kvadratnom faktoru $(x^2+p_jx+q_j)^{m_j}$ polinoma iz nazivnika
+    odgovara izraz
+    $$
+      \frac{B_{j1}x+C_{j1}}{x^2+p_jx+q_j} + \frac{B_{j2}x+C_{j2}}{(x^2+p_jx+q_j)^2} + \dots + \frac{B_{jm_j}x+C_{jm_j}}{(x^2+p_jx+q_j)^{m_j}}.
+    $$
+\end{itemize}
+
+Nepoznate koeficijenate $A_{il}$, $B_{jk}$ i $C_{jk}$ nalazimo iz same
+jednakosti rastava (množenjem s nazivnikom i izjednačavanjem koeficijenata uz
+iste postencije od $x$).
+
+\begin{example}
+    Rastavite na parcijalne razlomke funkcije:
+    \begin{enumerate}
+        \item $R(x)=\frac{x+2}{x^2-1}$,
+        \item $R(x)=\frac{2x^2+x+2}{x^3+x}$,
+        \item $R(x)=\frac{1}{x^3+2x^2+x}$,
+        \item $R(x)=\frac{x+1}{x^3-x^2}$.
+    \end{enumerate}
+\end{example}
+
+\subsection{Integriranje parcijalnih razlomaka}
+
+Integrale parcijalnih razlomaka svodimo na tablične integrale na sljedeći način:
+
+\begin{enumerate}
+    \item integral $\int \frac{dx}{(x-a)^n}$ supstitucijom $t=x-a$,
+    \item integral $\int \frac{2x+p}{(x^2+px+q)^n}$ supstitucijom $t=x^2+px+q$.
+\end{enumerate}
+
+\begin{example}
+    Izračunajte integral $\int R(x) dx$:
+    \begin{enumerate}
+        \item za racionalne funkcije $R(x)$ iz prethodnih primjera,
+        \item za $R(x) = \frac{x^5+x^4-8}{x^3-4x}$
+    \end{enumerate}
+\end{example}

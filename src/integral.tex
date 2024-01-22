@@ -31,6 +31,10 @@ Za razumjevanje integrala, ulogu igra i \fancyeq[][lagrangeov teorem srednje vri
     \end{enumerate}
 \end{example}
 
+\begin{enumerate}
+    \item $F(x) = \cos x$
+\end{enumerate}
+
 \begin{example}
     Odredite primitivnu funkciju $F(x)$ funkcije:
     $$
@@ -64,6 +68,57 @@ sljedećim relacijama:
 
 Derivacija integrala jednaka je podintegralnoj funkciji, odnosno integriranje
 poništava deriviranje do na konstantu.
+
+\subsection{Svojstva integrala}
+
+\begin{proposition}[pravilo u umnošku s konstantom]
+    $$
+    \int{{k\,f\left( x \right)\,dx}} = k\int{{f\left( x \right)\,dx}}
+    $$
+\end{proposition}
+
+Pretpostavimo da je $\mathrm{F}(x)$ antiderivacija funckije $f(x)$,
+i da vrijedi $\mathrm{F}'(x) = f(x)$.
+
+Onda možemo zapisati koristiti svojstva deriviranja kako bismo dobili:
+$$
+    (k\mathrm{F}(x))' = k \cdot \mathrm{F}'(x) = k \cdot f(x)
+$$
+
+\begin{proposition}[svojstvo linearnosti]
+    Integral zbroja ili razlike funkcija $f(x)$ i $g(x)$ je jednak zbroju ili razlici dva integrala tih funckija:
+    $$
+    \int_a^b (\alpha f(x) + \beta g(x))dx = \alpha \int_a^b f(x)dx \pm \beta \int_a^b g(x)dx\,.
+    $$
+\end{proposition}
+
+
+Pretpostavimo da je $F\left( x \right)$ antiderivacija $f\left( x \right)$,
+i da je $\mathrm{G}\left( x \right)$ antiderivacija $g\left( x \right)$.
+
+Dakle vrijedi $\mathrm{F}'\left( x \right) = f\left( x \right)$ i $\mathrm{G}'\left( x \right) =
+g\left( x \right)$.
+
+Osnovna svojstva o derivacijama nam također govore da vrijede slijedeće jednakosti:
+\begin{itemize}
+    \item $\left( \mathrm{F}\left( x \right) \pm \mathrm{G}\left( x
+    \right) \right)' =
+    \mathrm{F}'\left( x \right) \pm \mathrm{G}'\left( x \right) =
+    f\left( x \right) \pm g\left( x \right)$,
+    \begin{itemize}
+        \item $F\left( x \right) + G\left( x \right)$ je antiderivacija izraza
+        $f\left( x \right) + g\left( x \right)$,
+        \item $F\left( x \right) - G\left( x
+        \right)$ je antiderivacija izraza $f\left( x \right) - g\left( x \right)$.
+    \end{itemize}
+\end{itemize}
+
+$$
+\int{{f\left( x \right) \pm g\left( x \right)\,dx}} = F\left( x
+\right) \pm G\left( x \right) + c = \int{{f\left( x \right)\,dx}} \pm
+\int{{g\left( x \right)\,dx}}
+$$
+
 
 \subsection{Direktna integracija}
 

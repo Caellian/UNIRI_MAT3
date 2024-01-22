@@ -20,34 +20,52 @@ Površina između dvije funkcije $f$ i $g$ na intervalu $[a, b]$ je jednaka razl
 
 \subsubsection{Svojstva određenog integrala}
 
-\begin{enumerate}
-    \item $\displaystyle \int_a^a f(x)dx = 0$,
-    \item $\displaystyle \int_b^a f(x)dx = -\int_a^b f(x)dx$,
-    \item $\displaystyle \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx$,
-    \item linearnost: $\displaystyle \int_a^b (\alpha f(x) + \beta g(x))dx = \alpha \int_a^b f(x)dx \pm \beta \int_a^b g(x)dx$,
-    \item monotonost: $f(x) \leq g(x) \implies \displaystyle \int_a^b f(x)dx \leq \int_a^b g(x)dx$ ako je $f(x) \leq g(x)$,
-    \item nejednakost trokuta: $\displaystyle \left|\int_a^b f(x)dx\right| \leq \int_a^b |f(x)|dx$,
-    \item teorem srednje vrijednosti
-\end{enumerate}
+\begin{proposition}[interval nad $\emptyset$]
+    $$
+    \int_a^a f(x)dx = 0\,.
+    $$
+\end{proposition}
 
-\begin{theorem}[teorem srednje vrijednosti]
+\begin{proposition}[zamjena intervala]
+    $$
+    \int_b^a f(x)dx = -\int_a^b f(x)dx\,.
+    $$
+\end{proposition}
+
+\begin{proposition}[svojstvo aditivnosti]
+    Određeni integral na intervalu $[a, b]$ možemo izraziti kao sumu određenih integrala na intervalima $[a, c]$ i $[c, b]$, gdje je $c$ vrijednost u intervalu $[a, b]$:
+    $$
+    \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\,,\qquad a\leq c \leq b\,.
+    $$
+\end{proposition}
+
+\begin{proposition}[svojstvo monotonosti]
     Ako je funkcija $f(x)$ neprekidna na intervalu $[a, b]$, tada postoji točka $c \in \langle a, b\rangle$ takva da je
     $$
-        f(c) = \frac{1}{b-a}\int_a^b f(x)dx.
+    f(x) \leq g(x) \implies \int_a^b f(x)dx \leq \int_a^b g(x)dx\,.
     $$
-\end{theorem}
+\end{proposition}
+
+\begin{proposition}[nejednakost trokuta]
+    Ako je funkcija $f(x)$ neprekidna na intervalu $[a, b]$, tada postoji točka $c \in \langle a, b\rangle$ takva da je
+    $$
+        \left|\int_a^b f(x)dx\right| \leq \int_a^b |f(x)|dx\,.
+    $$
+\end{proposition}
+
+\begin{proposition}[teorem srednje vrijednosti]
+    Ako je funkcija $f(x)$ neprekidna na intervalu $[a, b]$, tada postoji točka $c \in \langle a, b\rangle$ takva da je
+    $$
+        f(c) = \frac{1}{b-a}\int_a^b f(x)dx\,.
+    $$
+\end{proposition}
 
 \subsection{Newton-Leibnizova formula}
 
 Neka je funkcija $f: [a,b] \to \mathbb{R}$ integrabilna na $[a,b]$ i neka za nju postoji primitivna funkcija $F: [a,b] \to \mathbb{R}$ takva da je $F'(x)=f(x)$ za svaki $x\in \langle a, b \rangle$. Tada vrijedi \textbf{Newton-Leibnizova formula}:
 
 $$
-  \int_a^b f(x)dx=F(b)-F(a).
-$$
-
-Newton-Leibnizova formula povezuje određeni integral s neodređenim te se često zapisuje u obliku
-$$
-  \int_a^b f(x)dx=F(x)\Big|_a^b.
+  \int_a^b f(x)dx=F(x)\Big|_a^b=F(b)-F(a).
 $$
 
 \begin{example}

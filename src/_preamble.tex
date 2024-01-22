@@ -39,6 +39,10 @@
 \include{_boxes}
 \include{_symbols}
 
+\definecolor{accent}{HTML}{2363be}
+
+\newcommand{\negphantom}[1]{\ifmmode\settowidth{\dimen0}{$#1$}\else\settowidth{\dimen0}{#1}\fi\hspace*{-\dimen0}}
+
 \title{Skripta: Matematika 3}
 \author{Tin Švagelj}
 

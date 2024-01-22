@@ -52,7 +52,7 @@
 }
 
 \newcounter{propositioncounter}[section]
-\NewDocumentEnvironment{propositionbox}{ o +b }{
+\NewDocumentEnvironment{proposition}{ o +b }{
     \refstepcounter{propositioncounter} 
     \IfValueTF{#1}
         {\begin{borderbox}{\faInfoCircle}{Propozicija \thesection.\thepropositioncounter: #1}{colordefinitionfg}{colordefinitionbg}}
