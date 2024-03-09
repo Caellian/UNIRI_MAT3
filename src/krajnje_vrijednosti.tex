@@ -1,0 +1,90 @@
+\section{Krajnje vrijednosti}
+
+\subsection{Minimum i maksimum}
+
+Maksimum i minimum funkcije su, sukladno, najveća i najmanja vrijednost koju
+funkcija proprima.
+
+Maksimum i minimum generalno nazivamo \textbf{ekstremima} funkcije.
+
+Mogu biti definirani za određeni interval (lokalni/relativni ekstremi) ili za
+cijelu domenu (globalni/apsolutni ekstremi) funckije.
+
+\begin{multicols}{2}
+    
+\begin{definition}[globalni maksimum]
+    Funkcija realnih vrijednosti $f$ definirana na domeni $X$ ima
+    \textbf{globalnu} (ili \textbf{apsolutnu}) \textbf{točku maksimuma} u $x^*$,
+    ako je $f(x^*) \geq f(x)$ za svaki $x \in X$.
+
+    \smallskip
+    Vrijednost funkcije u toj točki se zove \textbf{maksimalna vrijednost}, a
+    označava se sa $\max(f(x))$.
+\end{definition}
+
+\begin{definition}[globalni minimum]
+    Funkcija realnih vrijednosti $f$ definirana na domeni $X$ ima
+    \textbf{točku globalnog} (ili \textbf{apsolutnog}) \textbf{minimuma} u $x^*$,
+    ako je $f(x^*) \leq f(x)$ za svaki $x \in X$.
+
+    \smallskip
+    Vrijednost funkcije u toj točki se zove \textbf{minimalna vrijednost}, a
+    označava se sa $\min(f(x))$.
+\end{definition}
+
+\begin{definition}[lokalni maksimum]
+    Ako je domena $X$ metrični prostor, onda kažemo da $f$ ima \textbf{točku
+    lokalnog} (ili \textbf{relativnog}) \textbf{maksimuma} u $x^*$, ako postoji
+    neki $\varepsilon > 0$ takav da je $f(x^*) \geq f(x)$ za svaki $x \in X$
+    udaljen za $\varepsilon$ od $x^*$.
+\end{definition}
+
+\begin{definition}[lokalni minimum]
+    Ako je domena $X$ metrični prostor, onda kažemo da $f$ ima \textbf{točku
+    lokalnog} (ili \textbf{relativnog}) \textbf{minimuma} u $x^*$, ako postoji
+    neki $\varepsilon > 0$ takav da je $f(x^*) \leq f(x)$ za svaki $x \in X$
+    udaljen za $\varepsilon$ od $x^*$.
+\end{definition}
+
+\end{multicols}
+
+I globalni i lokalni ekstremi mogu biti \textbf{strogi ekstremi}, ako su
+jedinstveni unutar domene funkcije ili neke udaljenosti $\varepsilon$ od $x^*$ (sukladno).
+
+\subsection{Infimum i supremum}
+
+\textbf{Infimum} (skraćeno \textbf{inf}) podskupa $S$ djelomično složenog
+skupa $P$ je najveći element u $P$ koji je manji ili jednak svakom elementu
+$S$, ako takav element postoji.
+
+\smallskip
+\noindent
+\textbf{Supremum} (skraćeno \textbf{sup}) podskupa $S$ djelomično složenog
+skupa $P$ je najmanji element u $P$ koji je veći ili jednak svakom elementu
+$S$, ako takav element postoji.
+
+\begin{definition}[infimum]
+    Donja međa podskupa $S$ parcijalno uređenog skupa $(P, \leq)$ je element $a$
+    iz $P$ takav da vrijedi:
+    $$
+        a \leq x,\, \forall x \in S\,.
+    $$
+
+    Donja međa $a$ skupa $S$ se zove \textbf{infimum} (ili najveća donja međa,
+    ili sastanak (engl. \textit{meet})) skupa $S$ ako je vrijednost $a$ veća od
+    svih donjih međa $y$ skupa $S$ skoje su sadržane u $P$.
+\end{definition}
+
+
+\begin{definition}[supremum]
+    Gornja međa podskupa $S$ parcijalno uređenog skupa $(P, \leq)$ je element
+    $b$ iz $P$ za kojeg vrijedi:
+    $$
+        b \geq x,\, \forall x \in S\,.
+    $$
+
+    Gornja međa $b$ skupa $S$ se zove \textbf{supremum} (ili najmanja gornja
+    međa, ili spoj (engl. \textit{join})) skupa $S$ ako je vrijednost $b$ manja
+    od svih gornjih međa $z$ skupa $S$ skoje su sadržane u $P$.
+\end{definition}
+

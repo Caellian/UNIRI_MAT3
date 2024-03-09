@@ -1,51 +1,41 @@
-\section{Tok Funkcije}
-
-\subsection{Tangenta i normala grafa}
-
-\textbf{Tangenta} na graf funkcije $f$ u točki $(x_0,y_0)$ ima jednadžbu:
-
-\begin{gather*}
-t\dots\quad y-y_0=f'(x_0)(x-x_0).\\
-f'(x_0)=0\implies t\dots\quad y = y_0
-\end{gather*}
-
-\noindent
-\textbf{Normala} na graf funkcije $f$ u točki $(x_0,y_0)$ ima jednadžbu:
-
-\begin{gather*}
-n\dots\quad y-y_0=\frac{1}{f'(x_0)}(x-x_0).\\
-f'(x_0)=0\implies n\dots\quad x = x_0
-\end{gather*}
-
+\section{Ispitivanje toka funkcije}
 
 \subsection{Domena}
 
-Funkcija $f(x)$ je definirana za sve realne brojeve $x\in\mathbb{R}$, osim ako
-njena vrijednost nije definirana za neki $x$. Vrijednost funkcije za $f(x)$ je
-definirana ako spada u očekivanu kodomenu ($\mathcal{C}$) funkcije.
+\begin{definition}
+    Domena $\mathcal{D}$ funkcije $f$ je skup svih vrijednosti na koje možemo
+    primjeniti tu funkciju.
+\end{definition}
 
-To se provjerava ovisno o uvjetima izraza korištenih u funkciji, no učestali
-uzroci su:
+\begin{definition}
+    Kodomena $\mathcal{C}$ funkcije $f$ je skup svih vrijednosti koje možemo
+    dobiti primjenjivanjem funkcije na neku vrijednost iz njezine domene
+    $\mathcal{D}$.
+\end{definition}
+
+Ako je neka realna funkcija $f$ zadana formulom, može biti ne definirana za neke
+vrijednosti varijable. U tom se slučaju radi o \textit{parcijalnoj funkciji}, a
+skup realnih brojeva na koje možemo primjeniti forulu se zove \textbf{prirodna
+domena} ili \textbf{domena definicije} funkcije $f$.
+
+\bigskip
+\noindent
+Domena se provjerava ovisno o uvjetima izraza korištenih u funkciji, no učestali
+razlozi isključivanja vrijednosti iz prirodne domene funkcije su:
 \begin{itemize}
     \item vrijednosti $x$ za koje nazivnik razlomka u funkciji poprima vrijednost $0$,
+    \item po dijelovima funkcija nije definirana za neku vrijednost ili skup vrijednosti,
     \item pojavljivanje korijena negativnog broja (ako kodomena ne uključuje imaginarne brojeve),
-    \item negativan argument logaritma ili argument jednak nuli,
-    \item $\dots$
+    \item negativan argument logaritma ili argument jednak nuli, \dots
 \end{itemize}
-
-\noindent
-Domena funkcije je skup svih realnih brojeva $\mathbb{R}$ osim vrijednosti $x$
-koje uvrštene u funkciju $f$ daju nevaljale/neodređene rezultate.
 
 \subsection{Nultočke}
 
-Nultočke funkcije $f$ su vrijednosti $x$ za koje funkcija poprima vrijednost $0$.
-U grafičkom prikazu to znači da prelazi na tim točkama preko x-osi.
+Nultočke ili korijeni funkcije $f$ su vrijednosti $x$ koje funkcija preslikava
+na vrijednost $0$. U grafičkom prikazu to znači da na tim točkama dodiruje ili
+presijeca $x$-os.
 
-Za određivanje nultočaka, rješavamo jednadžbu:
-$$
-f(x) = 0
-$$
+Za određivanje nultočaka, rješavamo: $f(x) = 0$
 
 \subsection{Intervali monotonosti}
 
@@ -73,13 +63,14 @@ je $c$ stacionarna točka od $f$ ili ako $f$ nije derivabilna u točki $c$.
     Točka $(c, f(c))$ je \textbf{lokalni minimum} funkcije $f$ ako postoji
     interval $\langle a,b \rangle$ koji sadrži točku $c$ takav da
     $f(c)<f(x),\forall x \in \langle a,b \rangle, x\neq c$.
+
     Točka $(c, f(c))$ je \textbf{lokalni maksimum} funkcije $f$ ako postoji
     interval $\langle a,b \rangle$ koji sadrži točku $c$ takav da
     $f(c)>f(x),\forall x \in \langle a,b \rangle, x\neq c$.
 \end{definition}
 
 U točki ekstrema $(c, f(c))$, tangenta na graf funkcije (ako postoji) je
-paralelna x-osi, odnosno njen koeficijent smjera $f'(c) = 0$.
+paralelna $x$-osi, odnosno njen koeficijent smjera $f'(c) = 0$.
 
 Funkcija $f$ ima lokalni ekstrem u kritičnoj točki $c$ ako i samo ako se
 predznak funkcije $f'$ na području lijevo od $c$ razlikuje od predznaka funkcije

@@ -28,11 +28,41 @@ $$
 
 \subsection{Volumen rotacijskog tijela}
 
-Graf funkcije $f$ rotiramo oko $x$-osi. Volumen tijela dobivenog rotacijom lika
-određenog dijelom grafa funkcije $f$ te pravcima $x=a$, $x=b$ i $x$-osi, kao na
-slici, jednak je
+\subsubsection{Metoda diska}
+
+Metoda diska se primjenjuje kada je nacrtani presijek \textbf{okomit} na os oko
+koje ga rotiramo, tj. kada se integrira paralelno osi rotacije.
+
+Volumen tijela formiranog rotacijom površine lika između dviju krivulja $f(x)$ i
+$g(x)$, omeđene pravcima $x=a$ i $x=b$, oko $x$-osi je
 $$
-    V=\pi \int_a^b f^2(x)\,dx.
+    V=\pi \int_a^b |f(x)^2-g(x)^2|\,dx\,.
+$$
+
+Volumen tijela dobivenog rotacijom površine lika određenog dijelom grafa
+funkcije $f$ te pravcima $x=a$, $x=b$ i $x$-osi, jednak je
+$$
+    V=\pi \int_a^b f^2(x)\,dx\,.
+$$
+
+Identične formule vrijede i za rotaciju oko $y$-osi ako je parametar funkcija
+$f$ i $g$ u tom slučaju $y$.
+
+\subsubsection{Metoda cilindra}
+
+Metoda cilindra se primjenjuje kada je nacrtani presijek \textbf{paralelan} na
+os oko koje ga rotiramo, tj. kada se integrira okomio na os rotacije.
+
+Volumen tijela formiranog rotacijom površine lika između dviju krivulja $f(x)$ i
+$g(x)$, omeđene pravcima $x=a$ i $x=b$ oko $x$-osi je
+$$
+V = 2\pi \int_a^b y\,|f(y) - g(y)|\,dx\,.
+$$
+
+Ako je $g(y) = 0$, tj. rotiratmo površinu između krivulje i $x$-osi, ta formula
+se reducira na:
+$$
+V = 2\pi \int_a^b y\,|f(y)|\,dx\,.
 $$
 
 \begin{example}

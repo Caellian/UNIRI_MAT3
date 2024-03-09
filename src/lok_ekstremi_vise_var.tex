@@ -1,0 +1,60 @@
+\subsection{Lokalni ekstremi funckija više varijabli}
+
+\begin{definition}[lokalni maksimum funkcije dviju varijabli]
+    Za funkciju $f$ dviju varijabli kažemo da ima lokalni maksimum u točki
+    $(x_0, y_0)$ ako postoji okolina te točke takva da za sve $(x,y)$ iz te
+    okoline vrijedi $f(x_0,y_0) \geq f(x,y)$.
+\end{definition}
+
+\begin{definition}[lokalni minimum funkcije dviju varijabli]
+    Za funkciju $f$ dviju varijabli kažemo da ima lokalni minimum u točki $(x_0,
+    y_0)$ ako postoji okolina te točke takva da za sve $(x,y)$ iz te okoline
+    vrijedi $f(x_0,y_0) \leq f(x,y)$.
+\end{definition}
+
+Ako funckija $f$ ima lokalni ekstrem u točki $(x_0, y_0)$ i ako u toj točki
+postoje parcijalne derivacije prvog reda, onda mora vrijediti
+$$
+\frac{\partial f}{\partial x} (x_0, y_0) = \frac{\partial f}{\partial y} (x_0, y_0) = 0\,.
+$$
+
+Točke koje zadovoljavaju zaj uvjet zovemo \textbf{stacionarnim točkama}.
+
+Stacionarna točka može biti:
+\begin{itemize}
+    \item točka lokalnog maksimuma,
+    \item točka lokalnog minimuma, ili
+    \item sedlasta točka.
+\end{itemize}
+
+\begin{definition}[sedlasta točka]
+    Sedlasta točka je točka na površini grafa funkcije $f$ za koju su nagibi
+    (derivacije) u okomitim smjerovima jednaki nuli, ali koja nije lokalni
+    ekstrem funkcije.
+\end{definition}
+
+\subsubsection{Kriterij lokalnog ekstrema}
+
+\begin{gather*}
+    A = \frac{\partial^2 f}{\partial^2 x}\,,\quad
+    B = \frac{\partial^2 f}{\partial y \partial x} = \frac{\partial^2 f}{\partial x \partial y}\,,\quad
+    C = \frac{\partial^2 f}{\partial^2 y}\,\\
+    \Delta = AC - B^2\,.
+\end{gather*}
+
+\noindent
+Ako je
+\begin{enumerate}
+    \item $\Delta > 0$, onda je $(x_0,y_0)$ točka lokalnog ekstrema, i to
+    \begin{itemize}
+        \item maksimuma ako je $A < 0$,
+        \item minimuma ako je $A > 0$.
+    \end{itemize}
+    \item $\Delta < 0$, onda je $(x_0, y_0)$ sedlasta točka.
+    \item $\Delta = 0$, onda kriterij ne daje odluku.
+\end{enumerate}
+
+\begin{example}
+    Provjeri ima li funckija $f(x,y) = 3x^2y+y^3-3x^2-3y^2+2$ sedlaste točke.
+\end{example}
+

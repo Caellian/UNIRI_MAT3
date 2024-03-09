@@ -7,13 +7,13 @@ intervalu.
     Ako postoji granična vrijednost zbroja $\sum_{i=1}^n f(c_i)\Delta x_i$ kada $n \to \infty$, $\Delta x_i \to 0$ dobivenu vrijednost zovemo \textbf{određeni integral}:
 
     $$
-        \int_a^b f(x)dx = \lim_{\substack{n \to \infty \\ \Delta x_i \to 0}} \sum_{i=1}^n f(c_i)\Delta x_i
+        \int_a^b f(x)\,dx = \lim_{\substack{n \to \infty \\ \Delta x_i \to 0}} \sum_{i=1}^n f(c_i)\Delta x_i
     $$
 \end{definition}
 
 Površina lika omeđenog grafom funkcije $f$, segmentom $[a, b]$ na $x$-osi te pravcima $x=a$ i $x=b$ je jednaka
 $$
-    P=\int_a^b |f(x)| dx.
+    P=\int_a^b |f(x)|\,dx.
 $$
 
 Površina između dvije funkcije $f$ i $g$ na intervalu $[a, b]$ je jednaka razlici površina segmenata $P$.
@@ -22,41 +22,41 @@ Površina između dvije funkcije $f$ i $g$ na intervalu $[a, b]$ je jednaka razl
 
 \begin{proposition}[interval nad $\emptyset$]
     $$
-    \int_a^a f(x)dx = 0\,.
+    \int_a^a f(x)\,dx = 0\,.
     $$
 \end{proposition}
 
 \begin{proposition}[zamjena intervala]
     $$
-    \int_b^a f(x)dx = -\int_a^b f(x)dx\,.
+    \int_b^a f(x)\,dx = -\int_a^b f(x)\,dx\,.
     $$
 \end{proposition}
 
 \begin{proposition}[svojstvo aditivnosti]
     Određeni integral na intervalu $[a, b]$ možemo izraziti kao sumu određenih integrala na intervalima $[a, c]$ i $[c, b]$, gdje je $c$ vrijednost u intervalu $[a, b]$:
     $$
-    \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\,,\qquad a\leq c \leq b\,.
+    \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx\,,\qquad a\leq c \leq b\,.
     $$
 \end{proposition}
 
 \begin{proposition}[svojstvo monotonosti]
     Ako je funkcija $f(x)$ neprekidna na intervalu $[a, b]$, tada postoji točka $c \in \langle a, b\rangle$ takva da je
     $$
-    f(x) \leq g(x) \implies \int_a^b f(x)dx \leq \int_a^b g(x)dx\,.
+    f(x) \leq g(x) \implies \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx\,.
     $$
 \end{proposition}
 
 \begin{proposition}[nejednakost trokuta]
     Ako je funkcija $f(x)$ neprekidna na intervalu $[a, b]$, tada postoji točka $c \in \langle a, b\rangle$ takva da je
     $$
-        \left|\int_a^b f(x)dx\right| \leq \int_a^b |f(x)|dx\,.
+        \left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx\,.
     $$
 \end{proposition}
 
 \begin{proposition}[teorem srednje vrijednosti]
     Ako je funkcija $f(x)$ neprekidna na intervalu $[a, b]$, tada postoji točka $c \in \langle a, b\rangle$ takva da je
     $$
-        f(c) = \frac{1}{b-a}\int_a^b f(x)dx\,.
+        f(c) = \frac{1}{b-a}\int_a^b f(x)\,dx\,.
     $$
 \end{proposition}
 
@@ -65,7 +65,7 @@ Površina između dvije funkcije $f$ i $g$ na intervalu $[a, b]$ je jednaka razl
 Neka je funkcija $f: [a,b] \to \mathbb{R}$ integrabilna na $[a,b]$ i neka za nju postoji primitivna funkcija $F: [a,b] \to \mathbb{R}$ takva da je $F'(x)=f(x)$ za svaki $x\in \langle a, b \rangle$. Tada vrijedi \textbf{Newton-Leibnizova formula}:
 
 $$
-  \int_a^b f(x)dx=F(x)\Big|_a^b=F(b)-F(a).
+  \int_a^b f(x)\,dx=F(x)\Big|_a^b=F(b)-F(a).
 $$
 
 \begin{example}
@@ -77,8 +77,8 @@ $$
     Izračunajte:
 
     \begin{enumerate}
-        \item $\displaystyle \int_e^{e^2} \frac{\ln x}{x} dx$,
-        \item $\displaystyle \int_1^{e} 2x \ln x dx$.
+        \item $\displaystyle \int_e^{e^2} \frac{\ln x}{x}\,dx$,
+        \item $\displaystyle \int_1^{e} 2x \ln x\,dx$.
     \end{enumerate}
 \end{example}
 

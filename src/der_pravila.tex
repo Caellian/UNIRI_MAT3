@@ -39,8 +39,6 @@ Dokaz je identičan pravilu o derivaciji zbroja funkcija:
     &=f'(x) - g'(x)
 \end{align*}
 
-\newcolumn
-
 \begin{proposition}[pravilo o deriviranju konstante]
     Derivacija konstante $c$ je jednaka nuli:
 
@@ -57,6 +55,10 @@ Iz toga slijedi:
           =& \lim_{h\to 0}\frac{c - c}{h} = \lim_{h\to 0}0 = 0
 \end{align*}
 
+\vspace*{\stretch{1}}
+
+\newcolumn
+
 \begin{proposition}[pravilo o deriviranju umnoška funkcije s konstantom]
     Derivacija umnoška konstante i funkcije je jednaka umnošku te konstante i derivacije funkcije:
     $$
@@ -69,8 +71,6 @@ Iz toga slijedi:
             =&c\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
             =&cf'(x)
 \end{align*}
-
-\end{multicols}
 
 \begin{proposition}[pravilo o deriviranju umnoška funkcija]
     \label{eq:diff_prod}
@@ -85,36 +85,11 @@ Iz toga slijedi:
     =&cf'(x)
 \end{align*}
 
-\begin{proposition}[pravilo o deriviranju kvocijenta funkcija]
-    $$
-        \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}
-    $$
-\end{proposition}
-
-Ako je $h(x) = \frac{f(x)}{g(x)}$, onda vrijedi:
-
-\begin{align*}
-    h'(x) =& \lim_{k\to 0} \frac{h(x+k)-h(x)}{k}\\
-    =& \lim_{k\to 0} \frac{\frac{f(x+k)}{g(x+k)}-\frac{f(x)}{g(x)}}{k}\\
-    =& \lim_{k\to 0} \frac{f(x+k)g(x)-f(x)g(x+k)}{k\cdot g(x)g(x+k)}\\
-    =& \lim_{k\to 0} \frac{f(x+k)g(x)-f(x)g(x+k)}{k} \cdot \lim_{k\to 0}\frac{1}{g(x)g(x+k)}\\
-    =& \lim_{k\to 0} \left[\frac{f(x+k)g(x) - f(x)g(x) + f(x)g(x) - f(x)g(x+k)}{k} \right] \cdot \frac{1}{g(x)^2} \\
-    =& \left[\lim_{k\to 0} \frac{f(x+k)g(x) - f(x)g(x)}{k} - \lim_{k\to 0}\frac{f(x)g(x+k) - f(x)g(x)}{k} \right] \cdot \frac{1}{g(x)^2} \\
-    =& \left[\lim_{k\to 0} \frac{f(x+k) - f(x)}{k} \cdot g(x) - f(x) \cdot \lim_{k\to 0}\frac{g(x+k) - g(x)}{k} \right] \cdot \frac{1}{g(x)^2} \\
-    =& \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}.
-\end{align*}
-
-Gdje, jer je funkcija $g(x)$ neprekidna na promatranom intervalu, vrijedi:
-$$
-\lim_{k\to 0}\frac{1}{g(x)g(x+k)} = \lim_{k\to 0}\frac{1}{g(x)^2}
-$$
-
 \begin{proposition}[pravilo o deriviranju inverzne funkcije]
     $$
         (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}
     $$
 \end{proposition}
-
 
 \begin{align*}
     f(f^{-1}(x)) = x \xrightarrow{der.}\qquad \frac{d}{dx} f(f^{-1}(x)) =& \frac{d}{dx} x \phantom{f(f^{-1}(x)) = x \to\qquad}\\
@@ -129,32 +104,171 @@ $$
     =& \frac{1}{f'(f^{-1}(x))}\\
 \end{align*}
 
+\vspace*{\stretch{1}}
+
+\end{multicols}
+
+\pagebreak
+
+\begin{proposition}[pravilo o deriviranju kvocijenta funkcija]
+    $$
+        \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}
+    $$
+\end{proposition}
+
+\begin{align*}
+    h'(x) =& \lim_{h\to 0} \frac{\dfrac{f(x+h)}{g(x+h)}-\dfrac{f(x)}{g(x)}}{h} = \lim_{h\to 0} \frac{f(x+h)g(x)-f(x)g(x+h)}{h\cdot g(x)g(x+h)}\\
+    =& \lim_{h\to 0} \frac{f(x+h)g(x)-f(x)g(x+h)}{h} \cdot \lim_{h\to 0}\frac{1}{g(x)g(x+h)}\\
+    =& \lim_{h\to 0} \left[\frac{f(x+h)g(x) - f(x)g(x) + f(x)g(x) - f(x)g(x+h)}{h} \right] \cdot \frac{1}{g(x)^2} \\
+    =& \left[\lim_{h\to 0} \frac{f(x+h)g(x) - f(x)g(x)}{h} - \lim_{h\to 0}\frac{f(x)g(x+h) - f(x)g(x)}{h} \right] \cdot \frac{1}{g(x)^2} \\
+    =& \left[\lim_{h\to 0} \frac{f(x+h) - f(x)}{h} \cdot g(x) - f(x) \cdot \lim_{h\to 0}\frac{g(x+h) - g(x)}{h} \right] \cdot \frac{1}{g(x)^2} \\
+    =& \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}.
+\end{align*}
+
+Gdje, jer je funkcija $g(x)$ neprekidna na promatranom intervalu, vrijedi:
+$
+\displaystyle
+\lim_{k\to 0}\frac{1}{g(x)g(x+k)} = \lim_{k\to 0}\frac{1}{g(x)^2}
+$
+
 \begin{proposition}[pravilo o deriviranju kompozicije funkcija]
     $$
         (f\circ g)'(x) = (f(g(x)))' = f'(g(x)) \cdot g'(x)
     $$
 \end{proposition}
 
+\begin{align*}
+    (f \circ g)'(x) =& \lim_{h \to 0} \frac{(f \circ g)(x+h) - (f \circ g)(x)}{h} = \lim_{h \to 0} \frac{g(f(x+h))-g(f(x))}{h}\\
+    =& \lim_{h \to 0} \frac{g(f(x+h))-g(f(x))}{h} \cdot \frac{f(x+h)-f(x)}{f(x+h)-f(x)} = \lim_{h \to 0} \frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)} \cdot \frac{f(x+h)-f(x)}{h}\\
+    =& \lim_{h \to 0} \frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)} \cdot \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}\\
+    =& \lim_{h \to 0} \frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)} \cdot f'(x)\\
+\end{align*}
+
+Koristimo promjenu u varijabli: $k = f(x+h) - f(x) \implies f(x+h) = f(x) + k$,
+iz čega dobivamo:
+$$
+\lim_{h\to 0} k = \lim_{h\to 0} f(x+h) - f(x) = f(x+0) - f(x) = 0
+$$
+
+Što znači da kada se $h$ približava $0$, tada se i $k$ približava $0$. Traženje
+limesa kada se $h$ približava $0$, korištenjem promjene u varijabli, je
+identično traženju limesa kada se $k$ približava $0$:
+\begin{align*}
+    \lim_{h\to 0} \frac{g(f(x+h)) - g(f(x))}{f(x+h) - f(x)}
+    =& \lim_{k\to 0} \frac{g(f(x) + k) - g(f(x))}{k}\\
+    =& g'(f(x))
+\end{align*}
+
+Time dobivamo:
+\begin{align*}
+    (f \circ g)'(x) =& \lim_{h \to 0} \frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)} \cdot f'(x)\\
+    =& \lim_{k\to 0} \frac{g(f(x) + k) - g(f(x))}{k} \cdot f'(x)\\
+    =& g'(f(x)) \cdot f'(x)
+\end{align*}
+
+\pagebreak
+
 \begin{proposition}[pravilo o deriviranju eksponenta prirodnog broja]
     $$
-        (e^x)' = e^x \cdot x'
+        (e^x)' = e^x\quad \text{ili} \quad \exp'(x) = \exp(x)
     $$
 \end{proposition}
 
-\begin{proposition}[pravilo o deriviranju funkcije s potencijom]
-    $$
-        (x^{n})' = nx^{n-1}
-    $$
-\end{proposition}
+\begin{multicols}{2}
+\begin{align*}
+    (e^x)' =& \lim_{h\to 0 } \frac{e^{x+h} - e^x}{h}\\
+    =& \lim_{h\to 0} \frac{e^x \cdot e^h - e^x}{h}\\
+    =& \lim_{h\to 0} \frac{e^x (e^h - 1)}{h}\\
+    =& e^x \lim_{h\to 0} \frac{e^h - 1}{h} = e^x
+\end{align*}
+
+\vspace*{\stretch{1}}
+\columnbreak
+
+\noindent
+Član $\lim_{h\to 0} \frac{e^h - 1}{h}$ iz predzadnjeg koraka je jednak $1$.
+
+To se može najjednostavnije dokazati primjenom L'Hôpitalovog pravila koje je
+kasnije objašnjeno:
+\begin{align*}
+    \lim_{h\to 0} \frac{e^h - 1}{h} = \lim_{h\to 0} \frac{(e^h - 1)'}{(h)'} =& \lim_{h\to 0} \frac{e^h}{1}\\
+    =& e^0 = 1\,,
+\end{align*}
+no taj dokaz ovisi o pravilu o deriviranju eksponenta prirodnog broja.
+
+\end{multicols}
+
+Dokaz da je $\lim_{h\to 0} \frac{e^h - 1}{h} = 1$ koji ne ovisi o pravilu o
+deriviranju eksponenta prirodnog broja koristi \textit{definiciju eksponenta kao
+limesa niza} je:
+\begin{align*}
+    \frac{e^h - 1}{h} =& \frac{\displaystyle \lim_{n\to \infty} \left( 1 + \dfrac{h}{n} \right)^n - 1}{h}
+    = \frac{\displaystyle \lim_{n \to \infty} \sum_{k=0}^{n} \binom{n}{k} \left(\frac{h}{n}\right)^k - 1}{h}
+    = \lim_{n \to \infty} \frac{\displaystyle \sum_{k=0}^{n} \binom{n}{k} \left(\dfrac{h}{n}\right)^k - 1}{h}\\
+    =& \lim_{n \to \infty} \left(\binom{n}{0} 1 - 1 + \binom{n}{1}\left(\frac{h}{n}\right)\frac{1}{h} + \sum_{k=2}^n \binom{n}{k}\left(\frac{h}{n}\right)^k\frac{1}{h} \right)\\
+    =& \lim_{n \to \infty} 1 + \lim_{n \to \infty} \sum_{k=2}^n \binom{n}{k} \frac{h^{k-1}}{n^k} = 1 + h \lim_{n \to \infty} \sum_{k=2}^n \binom{n}{k} \frac{h^{k-1}}{n^k}\,.
+\end{align*}
+Kako se $h$ približava $0$, drugi pribrojnik se isto približava $0$, pa vrijedi:
+$
+\displaystyle \lim_{h\to 0} \frac{e^h - 1}{h} = 1
+$
+
+\begin{multicols}{2}
 
 \begin{proposition}[pravilo o deriviranju logaritamske funkcije]
     $$
-        (\ln(u))' = \frac{u'}{u}
+        (\ln x)' = \frac{1}{x}
     $$
 \end{proposition}
 
+Koristimo činjenicu da je eksponent prirodnog broja inverz prirodnom logaritmu: $y = e^x \Longleftrightarrow x = \ln y$.
+
+Uvrstimo li dokazano pravilo o deriviranju eksponenta prirodnog broja $(e^x)' = e^x$ u pravilo o deriviranju inverzne funkcije $(f^{-1})'(x) = \dfrac{1}{f'(f^{-1}(x))}$, dobivamo:
+\begin{align*}
+    (\ln x)' = \frac{1}{e^{\ln x}} = \frac{1}{x}
+\end{align*}
+
+\columnbreak
+
+\begin{proposition}[pravilo o deriviranju eksponenta funkcije]
+    $$
+        (a^x)' = a^x \cdot \ln a,\quad a > 0
+    $$
+\end{proposition}
+
+Jer je $a^x = e^{x \ln a},\, \forall a \in \mathbb{R}_{>0}$, vrijedi:
+
+\begin{align*}
+    (a^x)' = (e^{x \ln a})' = e^{x \ln a} \cdot \ln a = a^x \cdot \ln a
+\end{align*}
+
+\end{multicols}
+
+\pagebreak
+
+\begin{proposition}[pravilo o deriviranju funkcije s potencijom]
+    $$
+        (x^{n})' = nx^{n-1}\quad \text{ili} \quad (f(x)^{n})' = n\cdot f(x)^{n-1}
+    $$
+\end{proposition}
+
+\begin{align*}
+    (f(x)^{n})' =& \lim_{h\to 0} \frac{f(x+h)^n - (f(x))^n}{h}\\
+    =& (f(x))^n \lim_{h\to 0} \dfrac{\left(\dfrac{f(x+h)}{f(x)}\right)^n - 1}{h}
+    = (f(x))^n \lim_{h\to 0} \dfrac{e^{n \ln \frac{f(x+h)}{f(x)}} - 1}{h}\\
+    =& (f(x))^n \lim_{h\to 0} \left(\dfrac{e^{n \ln \frac{f(x+h)}{f(x)}} - 1}{n \ln \frac{f(x+h)}{f(x)}}\right)\left(\frac{n \ln \frac{f(x+h)}{f(x)}}{h}\right)\\
+    =& (f(x))^n \lim_{h\to 0} \frac{n \ln \frac{f(x+h)}{f(x)}}{h}
+    = n(f(x))^n \lim_{h\to 0} \frac{\ln \frac{f(x+h)}{f(x)}}{h}\\
+    =& n(f(x))^n \lim_{h\to 0} \frac{\ln \left(1 + \frac{f(x+h) - f(x)}{f(x)} \right)}{h}\\
+    =& n(f(x))^n \lim_{h\to 0} \left(\frac{\ln \left(1 + \frac{f(x+h) - f(x)}{f(x)} \right)}{\frac{f(x+h) - f(x)}{f(x)}} \right) \left( \frac{\frac{f(x+h) - f(x)}{f(x)}}{h} \right)\\
+    =& n(f(x))^n \lim_{h\to 0} \frac{\left(\frac{f(x+h)-f(x)}{f(x)}\right)}{h}
+    = n(f(x))^n \lim_{h\to 0} \frac{1}{f(x)}\frac{f(x+h)-f(x)}{h}\\
+    =& n(f(x))^{n-1} \lim_{h\to 0} \frac{f(x+h)-f(x)}{h} = n(f(x))^{n-1} f'(x)
+\end{align*}
+
 \subsection{Pravila deriviranja trigonometrijskih funkcija}
 
+\begin{multicols}{2}
 \begin{proposition}[pravilo o deriviranju sinusa]
     $$
         (\sin(x))' = \cos(x)
@@ -173,7 +287,7 @@ $$
     $$
 \end{proposition}
 
-\begin{proposition}[pravilo o deriviranju kotangense]
+\begin{proposition}[pravilo o deriviranju kotangensa]
     $$
         (\cot(x))' = -\csc^2(x)
     $$
@@ -190,3 +304,5 @@ $$
         (\csc(x))' = -\csc(x) \cot(x)
     $$
 \end{proposition}
+
+\end{multicols}
